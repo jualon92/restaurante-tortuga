@@ -12,7 +12,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.625rem;
+  gap: 0.925rem;
   padding-bottom: 50px;
 }
 
@@ -68,8 +68,14 @@
 }
 
 .carta__imagen {
+  /*estilo alternativo
+        border-radius: 150px 40px;
+    height: 400px;
+        
+        */
   width: 100%;
-  border-radius: 55px 55px 111px 111px;
+  height: 410px;
+  -webkit-mask-image: radial-gradient(120% 20% at bottom, transparent 42%, #fff 45%);
 }
 
 @media (max-width: 400px) {
