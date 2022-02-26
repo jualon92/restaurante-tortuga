@@ -1,0 +1,322 @@
+.contenedor-menu {
+    //   margin-left: 9%;
+    //   margin-right: 9%;
+    display: flex;
+    flex-direction: column;
+    gap: 63px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: 510px;
+
+    @media (max-width: 340px) {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    @media (min-width: 360px) and (max-width: 400px) {
+        margin-left: 1.4rem;
+        margin-right: 1.4rem;
+    }
+}
+
+.menu-header {
+    display: flex;
+    flex-direction: row;
+    height: 95px;
+
+    /* flex-basis: 100px; */
+    justify-content: space-between;
+    align-items: center;
+
+    &__direccion {
+        //  transform: translateY(3px);
+        //   flex-basis: 67%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 7px;
+        color: #000000;
+    }
+
+    &__foto {
+        //style alternativo mas alto
+        /*width: 60px;
+        height: 80px;
+
+        */
+        background: url("/images/ellipse_13.png");
+        background-size: cover; //
+        background-repeat: no-repeat;
+        border-radius: 500px;
+        width: 50px;
+        height: 48px;
+
+        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
+    }
+}
+
+.menu-header__img-usuario {
+    margin-top: 8px; //imagen queda algo desalineada aun con align self center
+
+    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
+}
+
+.elipse-img {
+    margin-left: -10px; //que el bloque de la imagen no quede tan amplio en x
+    width: 80px;
+    height: 68px;
+    /* left: 329px; */
+    /* top: 27px; */
+    margin-top: 5px;
+    -webkit-filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
+    background: url("/images/img-user.svg");
+}
+
+@mixin forma-circulo($left, $right, $top, $bottom) {
+    position: absolute;
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+}
+
+%circulo {
+    border-radius: 50px;
+    background: #c4c4c4;
+    transform: matrix(0.87, 0.52, -0.48, 0.86, 0, 0);
+}
+
+/////
+.rectangulo-nav {
+    // position: absolute;
+
+    width: 50px;
+    height: 48px;
+
+    filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.15));
+
+    &__fondo {
+        background-color: white;
+        width: 54px;
+        /* border-radius: 15px; */
+        height: 50px;
+        margin-top: -2.3px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        border-radius: 10px;
+    }
+    &__circulo-abajoDer {
+        @extend %circulo;
+        @include forma-circulo(32.69%, 51.1%, 51.65%, 31.09%);
+    }
+
+    &__circulo-abajoIzq {
+        @extend %circulo;
+        @include forma-circulo(32.69%, 51.1%, 23.91%, 58.83%);
+    }
+
+    &__circulo-arrDer {
+        @extend %circulo;
+        @include forma-circulo(61.12%, 22.66%, 51.65%, 31.09%);
+    }
+
+    &__circulo-arrIzq {
+        @extend %circulo;
+        @include forma-circulo(61.12%, 22.66%, 23.91%, 58.83%);
+    }
+}
+
+.imge:hover {
+    border-color: red;
+    background-color: red;
+}
+
+%flexRow-center{ // flex row  con align self y justify self center, reutilizable para comport responsive
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.box-ordenar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 137px;
+
+    background: rgba(236, 106, 0, 0.25);
+    border: 1px solid #ec6a00;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    justify-content: space-evenly;
+    padding-right: 50%;
+    padding-left: 0.9rem;
+    flex-wrap: wrap;
+
+    &__fondo {
+        /*
+        width: inherit;
+        object-fit: cover;*/
+        position: fixed;
+        width: 345px;
+        max-height: 130px;
+    }
+
+    &__aviso {
+        //   width: 45%;
+        //   height: 50px;
+        z-index: 1;
+        //  margin-top: 10px;
+        //  margin-left: 20px;
+
+        /*  position: absolute;
+        left: 11.11%;
+        right: 50%;
+        top: 10.93%;
+        bottom: 72.83%; */
+        
+        @extend %flexRow-center;
+       /*
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+*/
+
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+
+       
+        text-align: center;
+        color: #000000;
+    }
+
+    &__boton {
+     
+     /*
+        display: flex;
+        align-self: center;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        */
+        @extend %flexRow-center;
+        padding: 14px;
+        align-self: center;
+        //     position: absolute;
+        width: 117px;
+        left: calc(50% - 117px / 2 - 89.5px);
+        top: 55.47%;
+        bottom: 12.41%;
+
+        background: #ef4848;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        z-index: 2;
+        //     margin-left: 40px;
+        //    margin-top: 10px;
+    }
+    &__texto {
+        @extend %flexRow-center;
+        width: 89px;
+        height: 16px;
+
+      //  font-family: Roboto;
+      //  font-style: normal;
+         font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+      //  display: flex;
+      //  align-items: center;
+
+        color: #000000;
+    }
+
+    &__zanella {
+        //max-width: -webkit-fill-available;
+
+        //estilo grande, humo debajo de boton
+        padding-top: 70px;
+        transform: translateX(-55px);
+        max-width: 240px;
+
+        @media (max-width:340px){
+            transform: translateX(-45px);
+            max-width: 200px;
+        }
+    }
+}
+
+.categorias {
+    margin-top: -10px;
+    &__titulo {
+        margin-bottom: 14px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        height: 43px;
+        //    background-color: red;
+        gap: 20px; //figma  ruler
+
+        @media (max-width:340px){
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.boton-alimento {
+   /*
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;*/  
+    @extend %flexRow-center;
+    padding: 9px 10px;
+    min-width: fit-content;
+
+    background: #ef4848;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    &__foto {
+        //  position: absolute;
+        //   font-family: Roboto;
+        //   font-style: normal;
+         font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+
+        color: #000000;
+        margin-left: -3px; //centrado a ojo porque el bloque de imagen queda algo desalineado aun con flex center
+        margin-bottom: -4px;
+    }
+
+    &__texto {
+        font-size: 12px;
+        line-height: 14px;
+        /* identical to box height */
+
+        display: flex;
+        align-items: center;
+
+        color: #ffffff;
+    }
+}
