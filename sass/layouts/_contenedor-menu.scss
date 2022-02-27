@@ -3,10 +3,10 @@
     //   margin-right: 9%;
     display: flex;
     flex-direction: column;
-    gap: 63px;
+    gap: 33px;
     margin-left: 2rem;
     margin-right: 2rem;
-    height: 510px;
+    //  height: 510px;
 
     @media (max-width: 340px) {
         margin-left: 0.5rem;
@@ -137,13 +137,13 @@
     background-color: red;
 }
 
-%flexRow-center{ // flex row  con align self y justify self center, reutilizable para comport responsive
+%flexRow-center {
+    // flex row  con align self y justify self center, reutilizable para comport responsive
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     justify-content: center;
-    
 }
 .box-ordenar {
     display: flex;
@@ -182,9 +182,9 @@
         right: 50%;
         top: 10.93%;
         bottom: 72.83%; */
-        
+
         @extend %flexRow-center;
-       /*
+        /*
         display: flex;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -197,14 +197,12 @@
         display: -webkit-box;
         display: -ms-flexbox;
 
-       
         text-align: center;
         color: #000000;
     }
 
     &__boton {
-     
-     /*
+        /*
         display: flex;
         align-self: center;
         flex-direction: row;
@@ -234,13 +232,13 @@
         width: 89px;
         height: 16px;
 
-      //  font-family: Roboto;
-      //  font-style: normal;
-         font-weight: normal;
+        //  font-family: Roboto;
+        //  font-style: normal;
+        font-weight: normal;
         font-size: 14px;
         line-height: 16px;
-      //  display: flex;
-      //  align-items: center;
+        //  display: flex;
+        //  align-items: center;
 
         color: #000000;
     }
@@ -253,7 +251,7 @@
         transform: translateX(-55px);
         max-width: 240px;
 
-        @media (max-width:340px){
+        @media (max-width: 340px) {
             transform: translateX(-45px);
             max-width: 200px;
         }
@@ -269,22 +267,23 @@
     &__container {
         display: flex;
         flex-direction: row;
-        height: 43px;
+        //   height: 43px;
+  //      height: 50px;
         //    background-color: red;
         gap: 20px; //figma  ruler
 
-        @media (max-width:340px){
+        @media (max-width: 340px) {
             flex-wrap: wrap;
         }
     }
 }
 
 .boton-alimento {
-   /*
+    /*
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;*/  
+    align-items: center;*/
     @extend %flexRow-center;
     padding: 9px 10px;
     min-width: fit-content;
@@ -298,7 +297,7 @@
         //  position: absolute;
         //   font-family: Roboto;
         //   font-style: normal;
-         font-weight: bold;
+        font-weight: bold;
         font-size: 18px;
         line-height: 21px;
         display: flex;
@@ -318,5 +317,88 @@
         align-items: center;
 
         color: #ffffff;
+    }
+}
+
+.productos {
+    display: flex;
+    flex-direction: row;
+
+    min-height: 187px;
+  //  background-color: blue;
+    //  margin-top: -20px;
+
+    &__item {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.producto-ficha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    &__foto {
+        width: 147px;
+        height: 124px;
+    }
+    &__titulo {
+        //   width: 143px;
+        //   height: 16px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    &__descripcion {
+        //    width: 160px;
+        //     height: 34px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    &__precio {
+        width: 57px;
+        height: 21px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        color: #ef4848;
+    }
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: row;
+ //   background-color: yellow;
+
+    height: 67px;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &__lupa{
+    //    margin-bottom: 5px;
     }
 }
