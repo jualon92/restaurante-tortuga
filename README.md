@@ -1,4 +1,4 @@
-# rightNow-comida
+ 
 
 ## Conceptos a aplicar
 - prototipado Figma
