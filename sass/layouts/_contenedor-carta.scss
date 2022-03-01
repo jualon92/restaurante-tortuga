@@ -1,3 +1,5 @@
+ 
+
 .contenedor-carta {
     width: 100%;
     height: 736px;
@@ -60,6 +62,8 @@
       //   height: 410px;
       width:27.865rem;
       height: 30.438rem;  
+
+
        //  -webkit-mask-image: radial-gradient(120% 20% at bottom, transparent 42%, #fff 45%);
          -webkit-mask-image: radial-gradient(120% 18% at bottom, transparent 42%, #fff 45%);
      
@@ -159,7 +163,8 @@
     height: 58px;
  
 
-    background: #f64444;
+ //   background: #f64444;
+ background: #df2424;
     border: 1px solid #000000;
     box-sizing: border-box;
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);

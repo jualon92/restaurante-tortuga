@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <!--async css-->
+    <link rel="stylesheet" href="css/main.css"  rel="preload" as="style" onload="this.rel='stylesheet'">
     <title>Menu/title></title>
 </head>
 
 <body>
-
+    <main> 
+         
     <div class="contenedor-menu">
         <div class="menu-header">
             <div class="rectangulo-nav">
@@ -72,9 +74,9 @@
         </div>
 
         <div class="productos">
-            <div class="productos__item1 productos__item producto-ficha">
+            <div class="productos__item1 productos__item producto-ficha  ">
                
-                <img class="producto-ficha__foto" src="images/burger1.png" alt="" >
+                <img class="producto-ficha__foto" src="images/ambur.avif" alt="" >
           
                 <div class="p1 producto-ficha__titulo">Burger Doble Cheddar</div>
                 <div class="p2 producto-ficha__descripcion">Super Giga Cheddar-ium</div>
@@ -82,7 +84,7 @@
             </div  >
             <div class="productos__item2 productos__item producto-ficha">
        
-                <img class="producto-ficha__foto" src="images/pollo2.png" alt="hamburguesa bailarina"  ;
+                <img class="producto-ficha__pollo" src="images/pollo2.avif" alt="hamburguesa bailarina"  ;
                ;>
        
                 <div class="p1 producto-ficha__titulo">Burger Dancing Chicken</div>
@@ -105,6 +107,13 @@
            
 
         </div>
+         
+    </main>
 </body>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/productos.js"></script>
+<script type="module" src="js/carta.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+  
 
 </html>

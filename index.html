@@ -6,23 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+        rel="preload" as="style" onload="this.rel='stylesheet'">
+
     <title>RightNow-pedidos</title>
 </head>
 
 <body>
+    <main>  
+   
     <div class="contenedor-carta">
 
         <div class="carta__contenedor-imagen">
-            <!--    <img class="carta__curva" src="/images/curva.svg" alt="curvatura de border Inferior Imagen">-->
             <img class="carta__imagen" src="/images/menuGrande.avif" alt="Girl in a jacket">
         </div>
         <div class="carta__titulo">
-           <div>  La forma mas rapida de obtener <span style="color:#FF2E0094">Comida</span> </div>
+            <div> La forma mas rapida de obtener <span style="color:#ff2e00d4">Comida</span> </div>
         </div>
         <div class="carta__descripcion">
             Nuestro trabajo es ofrecerte el mejor servicio para que tengas el plato que te gusta lo mas rapido posible
@@ -36,13 +37,20 @@
 
 
         <form>
-            <button formaction='/menu.html' class="btn-comenzar" type="submit"><span class="btn-comenzar__texto">
-                    <!--me gusta que sea propio modulo btn comenzar-->
+            <button formaction="/menu.html" href="" class="btn-comenzar" type="submit"><span class="btn-comenzar__texto">
+                  
                     Comencemos
                 </span>
     </div>
+ 
     </form>
-
+-->
+</main>
+ 
 </body>
-
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/productos.js"></script>
+<script type="module" src="js/inicio.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+  
 </html>

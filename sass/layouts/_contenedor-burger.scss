@@ -1,12 +1,183 @@
+.body__carta{
+    background-color:#EADFD4 ;
+}
+
+.carta-container {
+   // background-color: #eadfd4;
+
+    &__fondo {
+        width: 100%;
+        height: 72%;
+        background: #ffffff;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 30px;
+
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+
 .burger-container {
+    z-index: 1;
+    margin-left: 3.4rem;
+    margin-right: 3.4rem;
     display: flex;
     flex-direction: column;
-    
-    align-items: center;
+    gap: 30px;
+    padding-top: 63px;
 
+    align-items: center;
 
     &__imagen {
         width: 286px;
         height: 241px;
+    }
+
+    &__titulo {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 23px;
+        line-height: 27px;
+        /* identical to box height */
+
+        display: flex;
+        align-self: flex-start;
+        align-items: center;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    &__resumen {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.btn-carrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 328px;
+    height: 58px;
+
+    background: #f64444;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);
+    border-radius: 30px;
+
+    &__texto {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #ffffff;
+    }
+}
+.burger-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &__icono {
+        display: flex;
+        /* align-content: stretch; */
+        align-items: center;
+    }
+}
+
+.burger-texto {
+    &__ {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 19px;
+        line-height: 22px;
+        display: flex;
+
+        color: #000000;
+    }
+}
+
+.contador-pedidos {
+    margin-top: -10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 136px;
+    height: 54px;
+
+    background: #f64444;
+    border-radius: 25px;
+}
+
+.resumen-burger {
+    display: flex;
+    justify-self: flex-start;
+    align-self: flex-start;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.burger-header {
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    &__titulo {
+        flex-basis: 100%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 23px;
+        line-height: 27px;
+        /* identical to box height */
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; // centrado precio con descripcion
+    }
+
+    &__precio {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 33px;
+        /* identical to box height */
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #ef4848;
     }
 }
