@@ -18,6 +18,9 @@ async function initMenu() {
     
     console.warn("initMenu")
 
+    
+
+    document.querySelector("body").classList.remove("body__carta")
     //cargo 
     document.querySelector(".productos__item1").addEventListener("click", async (e) => {
         console.log(" fui clickeado")
@@ -26,7 +29,7 @@ async function initMenu() {
         let id =  document.querySelector(".productos__item1").id // id de boton
         location.hash = id //nuevo hash
         console.log("nuevo hash" + location.hash)
-       
+        
     })
 }
     //agregar listeners a botones
