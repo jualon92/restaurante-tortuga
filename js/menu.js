@@ -1,27 +1,30 @@
  
 
+let indiceGuardado = ""
 async function initMenu() {
-    let burgerList = [
-        {
-            nombre: "Burger Doble Cheddar",
-            descripcion: "Super Giga Cheddar-ium",
-            imagen: "images/burgerGigante.png",
-            precio: `$ 12.50`,
-            texto: `La densidad del cheddar utilizado es dos veces el encontrado en
-        la
-        usual hamburguesa`,
-            estrellas: 4.5,
-            calorias: "180kcal",
-            tiempo: "5-15min"
-        }
-    ]
-    
+    let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
     console.warn("initMenu")
 
     
 
     document.querySelector("body").classList.remove("body__carta")
     //cargo 
+     
+    for (const producto of listaProductos) {
+        producto.addEventListener("click", async (e) => {
+            console.log(" fui clickeado")
+            e.preventDefault() //necesario  
+            console.log("viejo hash: " + location.hash)
+            let id =  "comida"
+            location.hash = id //nuevo hash
+            console.log("nuevo hash" + location.hash)
+            let indice= listaProductos.indexOf(producto)
+            console.log("indice " + indice)
+            indiceGuardado = indice
+        })
+    }
+    /*
+
     document.querySelector(".productos__item1").addEventListener("click", async (e) => {
         console.log(" fui clickeado")
         e.preventDefault() //necesario  
@@ -29,9 +32,10 @@ async function initMenu() {
         let id =  document.querySelector(".productos__item1").id // id de boton
         location.hash = id //nuevo hash
         console.log("nuevo hash" + location.hash)
-        
     })
+    */
+     
 }
     //agregar listeners a botones
 
-   
+ 

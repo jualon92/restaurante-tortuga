@@ -5,8 +5,8 @@ async function initComida(){
     let plantillaHbs = await fetch('templates/cartas.hbs').then(r => r.text()) 
     var template = Handlebars.compile(plantillaHbs);
     
-    let html = template(burgerList[0])
-    console.log(burgerList[0])
+    let html = template(burgerList[indiceGuardado])
+    console.log(burgerList[indiceGuardado])
      console.log("template listo " + html)
     document.querySelector("main").innerHTML = html 
     document.querySelector("body").classList.add("body__carta")
