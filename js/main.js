@@ -29,10 +29,16 @@ class Main {
         console.log("archivo : " + archivo)
         let plantilla =  await fetch(archivo).then(r => r.text()) //get con async await
         console.log("plantilla: " + plantilla)
+        
         // Carga del código de vista (HTML) de la plantilla
+        
         let main = document.querySelector('main')
-        main.innerHTML = plantilla
+        
+            main.innerHTML = plantilla
+        
+        
         this.initJS(id)
+        
        
          
         

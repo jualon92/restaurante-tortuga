@@ -24,5 +24,4 @@ let burgerList = [
     }
 ]
 
-
  

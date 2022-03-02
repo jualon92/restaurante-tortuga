@@ -1,11 +1,12 @@
  
-
-let indiceGuardado = ""
+ 
 async function initMenu() {
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
     console.warn("initMenu")
 
-    
+     
+var indiceGuardado =  ""
+ 
 
     document.querySelector("body").classList.remove("body__carta")
     //cargo 
@@ -21,6 +22,7 @@ async function initMenu() {
             let indice= listaProductos.indexOf(producto)
             console.log("indice " + indice)
             indiceGuardado = indice
+            localStorage.setItem("indiceKey", indiceGuardado);
         })
     }
     /*

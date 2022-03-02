@@ -1,14 +1,15 @@
 async function initComida(){
     console.warn("carta")
      
-
+     
     let plantillaHbs = await fetch('templates/cartas.hbs').then(r => r.text()) 
     var template = Handlebars.compile(plantillaHbs);
+    let index = JSON.parse(localStorage.getItem("indiceKey"))
     
-    let html = template(burgerList[indiceGuardado])
-    console.log(burgerList[indiceGuardado])
+    let html = template(burgerList[index])
+    console.log(burgerList[index])
      console.log("template listo " + html)
-    document.querySelector("main").innerHTML = html 
+    document.querySelector("main").innerHTML = html
     document.querySelector("body").classList.add("body__carta")
 
 
@@ -16,3 +17,5 @@ async function initComida(){
         location.hash = "menu"
     })
 }
+
+ 
