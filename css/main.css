@@ -709,11 +709,6 @@
           align-items: center;
 }
 
-.burger-container__imagen {
-  width: 286px;
-  height: 241px;
-}
-
 .burger-container__titulo {
   font-family: Roboto;
   font-style: normal;

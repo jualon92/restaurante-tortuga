@@ -15,7 +15,7 @@ let burgerList = [
     {
         nombre: "Burger Dancing Chicken",
         descripcion: "Pollo bailarin",
-        imagen: "images/pollo2.avif",
+        imagen: "/images/hamGrande.avif",
         precio: `$ 11.25`,
         texto: `Un pollo alegre es un sabor diferente`,
         estrellas: 4.2,
