@@ -14,4 +14,4 @@ let burgerList = [
 ]
 
 
-export default burgerList
+ 

@@ -1,45 +1,70 @@
-import burgerList from "./productos.js"
-
-
-//podria hardcodear que posicion uno lleve a hamburguesa cheddar pero traeria problemas si mas adelante se cambia hamburguesa
-let productoPos1 = document.querySelector(".productos__item1")
-
+ 
+ 
  
 
-document.querySelector(".productos__item1").addEventListener("click", () => {
-    getComidaHTML(burgerList[0])
-})
-
-
-
-
-async function getComidaHTML(objeto) {
-    let menuInicial =  await fetch('vistas/menup.html').then(r => r.text()) 
-    let plantillaHbs = await fetch('templates/cartas.hbs').then(r => r.text()) // obtener plantilla
-
-    var template = Handlebars.compile(plantillaHbs);
-
-    let html = template(objeto)
-    //console.log(html)
-    document.body.innerHTML = html
-    document.body.classList.add("body__carta") //clase de body que falta para background
-
-
-
-    document.querySelector(".btnTo-menu").addEventListener("click", (e) => {
+class Main {
+    initJS(id) { //podria ser un map de direcciones? rever
+       if(id == 'inicio') {
+            initInicio()
+        }else if (id == "menu"){
+            initMenu()
+        }else if (id == "comida"){
+            initComida()
+        }
         
-        console.log("fui presionado")
-        document.body.classList.remove("body__carta")
-        document.body.innerHTML = menuInicial
-        document.querySelector(".productos__item1").addEventListener("click", () => {
-            // console.log(burgerList)
+    }
 
-            getComidaHTML(burgerList[0])
 
+    async start() {
+        await this.cargarPlantillas()
+    }
+    getNombreArchivo(id) { 
+        return 'vistas/' + id + '.html'
+    }
+
+
+    async cargarPlantilla(id) {
+        console.log("nombre archivo" + this.getNombreArchivo(id))
+        let archivo = this.getNombreArchivo(id) // "inicio" => inicio.html
+        console.log("archivo : " + archivo)
+        let plantilla =  await fetch(archivo).then(r => r.text()) //get con async await
+        console.log("plantilla: " + plantilla)
+        // Carga del código de vista (HTML) de la plantilla
+        let main = document.querySelector('main')
+        main.innerHTML = plantilla
+        this.initJS(id)
+       
+         
+        
+        // Carga del código script (JS) de la plantilla
+        
+    }
+
+
+    async cargarPlantillas() {
+        /* --------------------------------------------------------- */
+        /* Carga inicial de la vista determinada por la url visitada */
+        /* --------------------------------------------------------- */
+        
+        let id = location.hash.slice(1) || 'inicio' //primer vista se encuentra en nav inicio
+        console.log("primer id " + id)
+        await this.cargarPlantilla(id)
+        //  this.marcarLink(id)
+
+        //al presionar, cambiar hash.
+
+        //al detectar cambio de hash, utilizar id para generar nueva plantilla
+        window.addEventListener('hashchange', async () => { // al detectar cambio de hash
+             console.log('Cambió la URL', "nueva" + location.hash.slice(1) )
+           
+            let id = location.hash.slice(1) || "inicio" //recuperar id
+         //   this.marcarLink(id)
+            console.log("por cargar plantilla")
+            await this.cargarPlantilla(id) //utilizarlo para plantilla
         })
-
-    })
-
+    }
 }
 
 
+const main = new Main()
+main.start() //ini
