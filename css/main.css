@@ -694,7 +694,13 @@
 }
 
 .footer-nav__lupa {
-  color: #DF2424;
+  color: #df2424;
+}
+
+.footer-nav__contador-menu {
+  display: none;
+  bottom: 5%;
+  left: 87%;
 }
 
 .body__carta {

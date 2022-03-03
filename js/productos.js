@@ -24,5 +24,14 @@ let burgerList = [
     }
 ]
 
+ 
+     
+function getRutaFromHTML(nombre){
+    
+    let ruta = "/images/simbolo" + nombre + ".png"
+    console.log(ruta)
+    return ruta
+}
+
 
 let contadorCarrito = 0

@@ -16,14 +16,12 @@
     @media (min-width: 360px) and (max-width: 400px) {
         margin-left: 1.4rem;
         margin-right: 1.4rem;
-      //  margin-top: -10px;
+        //  margin-top: -10px;
     }
-    @media (min-width:1000px){
+    @media (min-width: 1000px) {
         margin-left: 10%;
         margin-right: 10%;
-         
     }
-   
 }
 
 .menu-header {
@@ -65,9 +63,6 @@
 
         filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
     }
-
-
-    
 }
 
 .menu-header__img-usuario {
@@ -161,17 +156,14 @@
     width: 100%;
     height: 137px;
 
-
-    @media (min-width:1000px){
+    @media (min-width: 1000px) {
         align-content: end;
-    padding-left: 5%;
-    padding-right: 5%;
-         
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
-
-  //  background: rgba(236, 106, 0, 0.25); //bajo contraste
-    background-color:  #ec6a0066; // 
+    //  background: rgba(236, 106, 0, 0.25); //bajo contraste
+    background-color: #ec6a0066; //
     border: 1px solid #ec6a00;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -180,8 +172,6 @@
     padding-right: 50%;
     padding-left: 0.9rem;
     flex-wrap: wrap;
-
-     
 
     &__fondo {
         /*
@@ -290,18 +280,17 @@
         display: flex;
         flex-direction: row;
         //   height: 43px;
-  //      height: 50px;
+        //      height: 50px;
         //    background-color: red;
         gap: 20px; //figma  ruler
         overflow: auto;
         @media (max-width: 340px) {
-           // flex-wrap: wrap;
-           // overflow: auto;
+            // flex-wrap: wrap;
+            // overflow: auto;
         }
 
-        @media (min-width:1000px){
+        @media (min-width: 1000px) {
             justify-content: space-around;
-             
         }
     }
 }
@@ -318,13 +307,12 @@
 
     //background: #ef4848; //problema contraste
     //background-color:#DF2424;
-    background-color:#b1a0a0;
+    background-color: #b1a0a0;
     border: 1px solid #ffffff;
     box-sizing: border-box;
     border-radius: 25px;
 
-
-    &--cate-activo{
+    &--cate-activo {
         background-color: #ef4848;
     }
     &__foto {
@@ -359,7 +347,7 @@
     flex-direction: row;
 
     min-height: 187px;
-  //  background-color: blue;
+    //  background-color: blue;
     //  margin-top: -20px;
 
     &__item {
@@ -375,8 +363,8 @@
     align-items: center;
     gap: 0.6rem;
     &__foto {
-    //   width: 160px;
-     height: 95px;
+        //   width: 160px;
+        height: 95px;
     }
     &__titulo {
         //   width: 143px;
@@ -394,9 +382,9 @@
         color: #000000;
     }
 
-    &__pollo{
-    //    width: 146px!important;
-        height: 95px  ;
+    &__pollo {
+        //    width: 146px!important;
+        height: 95px;
     }
     &__descripcion {
         //    width: 160px;
@@ -415,7 +403,7 @@
     }
 
     &__precio {
-       // width: 57px;
+        // width: 57px;
         height: 21px;
 
         font-family: Roboto;
@@ -430,14 +418,24 @@
 .footer-nav {
     display: flex;
     flex-direction: row;
- //   background-color: yellow;
+    //   background-color: yellow;
 
     height: 67px;
     align-items: flex-end;
     justify-content: space-between;
 
-    &__lupa{
-    //    margin-bottom: 5px;
-    color: #DF2424;
+    &__lupa {
+        //    margin-bottom: 5px;
+        color: #df2424;
     }
+
+    &__contador-menu {
+        display: none;
+        
+        bottom: 5%;
+        left: 87%;
+    }
+
+    
 }
+
