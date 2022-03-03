@@ -24,4 +24,5 @@ let burgerList = [
     }
 ]
 
- 
+
+let contadorCarrito = 0

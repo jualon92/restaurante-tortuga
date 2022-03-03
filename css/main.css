@@ -270,6 +270,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: -20px;
 }
 
 .menu-header__direccion {
@@ -529,12 +530,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 20px;
-}
-
-@media (max-width: 340px) {
-  .categorias__container {
-    overflow: auto;
-  }
+  overflow: auto;
 }
 
 @media (min-width: 1000px) {
@@ -554,11 +550,15 @@
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  background-color: #DF2424;
+  background-color: #b1a0a0;
   border: 1px solid #ffffff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 25px;
+}
+
+.boton-alimento--cate-activo {
+  background-color: #ef4848;
 }
 
 .boton-alimento__foto {

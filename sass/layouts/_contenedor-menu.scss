@@ -16,6 +16,7 @@
     @media (min-width: 360px) and (max-width: 400px) {
         margin-left: 1.4rem;
         margin-right: 1.4rem;
+      //  margin-top: -10px;
     }
     @media (min-width:1000px){
         margin-left: 10%;
@@ -33,7 +34,7 @@
     /* flex-basis: 100px; */
     justify-content: space-between;
     align-items: center;
-
+    margin-bottom: -20px;
     &__direccion {
         //  transform: translateY(3px);
         //   flex-basis: 67%;
@@ -64,6 +65,9 @@
 
         filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
     }
+
+
+    
 }
 
 .menu-header__img-usuario {
@@ -289,10 +293,10 @@
   //      height: 50px;
         //    background-color: red;
         gap: 20px; //figma  ruler
-
+        overflow: auto;
         @media (max-width: 340px) {
            // flex-wrap: wrap;
-            overflow: auto;
+           // overflow: auto;
         }
 
         @media (min-width:1000px){
@@ -313,11 +317,16 @@
     min-width: fit-content;
 
     //background: #ef4848; //problema contraste
-    background-color:#DF2424;
+    //background-color:#DF2424;
+    background-color:#b1a0a0;
     border: 1px solid #ffffff;
     box-sizing: border-box;
     border-radius: 25px;
 
+
+    &--cate-activo{
+        background-color: #ef4848;
+    }
     &__foto {
         //  position: absolute;
         //   font-family: Roboto;

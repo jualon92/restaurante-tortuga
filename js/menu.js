@@ -3,8 +3,8 @@
 async function initMenu() {
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
     console.warn("initMenu")
-
-     
+    let listaCategorias = Array.from(document.querySelectorAll(".boton-alimento"))
+    let indiceActivo = 0
 var indiceGuardado =  ""
  
 
@@ -25,6 +25,34 @@ var indiceGuardado =  ""
             localStorage.setItem("indiceKey", indiceGuardado);
         })
     }
+
+
+    //botonera categorias
+    for (const btnCategoria of listaCategorias){
+        btnCategoria.addEventListener("click", async (e) => {
+            
+            //pintar 
+            listaCategorias[indiceActivo].classList.remove("boton-alimento--cate-activo")
+         //   quitarCategorias(listaCategorias)
+            btnCategoria.classList.add("boton-alimento--cate-activo")
+
+          indiceActivo = listaCategorias.indexOf(btnCategoria) 
+ 
+        })
+
+
+    } 
+
+
+   
+    /* cuando se activa un boton, los demas se desactivan, ciclo 1 x 1, si fueran 40 botones delay.
+    function quitarCategorias(){ //podria recordarse el indice activo y no es necesario ciclar por todos los botones, mas performante?
+        for (const btnCategoria of listaCategorias){
+            btnCategoria.classList.remove("boton-alimento--cate-activo")
+        }
+    }
+        */
+
     /*
 
     document.querySelector(".productos__item1").addEventListener("click", async (e) => {
