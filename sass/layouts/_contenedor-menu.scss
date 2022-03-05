@@ -432,10 +432,16 @@
     &__contador-menu {
         display: none;
         
-        bottom: 5%;
-        left: 87%;
+      //  bottom: 5%;  //no es responsive, cambio en reso traeria problemas 
+       // left: 87%;
     }
 
+    &__carrito-notif{ //carrito mas icono contador
+         
+        display: flex;
+        flex-direction: column; 
+        align-items: center; //para que queden pegados
+    }
     
 }
 

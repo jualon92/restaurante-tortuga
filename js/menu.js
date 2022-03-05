@@ -49,13 +49,13 @@ async function initMenu() {
         document.querySelector(".footer-nav__carrito").src = "images/carritoRojo.svg"
         
         contadorMenu.src = getRutaFromHTML(contadorCompras)
-        contadorMenu.style = "display:block; position:absolute;"
+        contadorMenu.style = "display:block;  "
 
 
     } else if (contadorCompras > 9) {
         document.querySelector(".footer-nav__carrito").src = "images/carritoRojo.svg"
         contadorMenu.src = "/images/simboloMayor9.png"
-        contadorMenu.style = "display:block; position:absolute;"
+        contadorMenu.style = "display:block;  "
     } else {
         document.querySelector(".footer-nav__carrito").src = "images/carrito.svg"
     }
