@@ -13,14 +13,14 @@ async function initMenu() {
 
     for (const producto of listaProductos) {
         producto.addEventListener("click", async (e) => {
-            console.log(" fui clickeado")
+         
             e.preventDefault() //necesario  
             console.log("viejo hash: " + location.hash)
             let id = "comida"
             location.hash = id //nuevo hash
             console.log("nuevo hash" + location.hash)
             let indice = listaProductos.indexOf(producto)
-            console.log("indice " + indice)
+            
             indiceGuardado = indice
             localStorage.setItem("indiceKey", indiceGuardado);
         })

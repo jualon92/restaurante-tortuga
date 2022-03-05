@@ -26,9 +26,9 @@ class Main {
     async cargarPlantilla(id) {
         console.log("nombre archivo" + this.getNombreArchivo(id))
         let archivo = this.getNombreArchivo(id) // "inicio" => inicio.html
-        console.log("archivo : " + archivo)
+         
         let plantilla =  await fetch(archivo).then(r => r.text()) //get con async await
-        console.log("plantilla: " + plantilla)
+      
         
         // Carga del código de vista (HTML) de la plantilla
         
@@ -65,7 +65,7 @@ class Main {
            
             let id = location.hash.slice(1) || "inicio" //recuperar id
          //   this.marcarLink(id)
-            console.log("por cargar plantilla")
+           
             await this.cargarPlantilla(id) //utilizarlo para plantilla
         })
     }
