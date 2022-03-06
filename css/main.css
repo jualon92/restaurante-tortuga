@@ -228,7 +228,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 43px;
+  gap: 35px;
   margin-left: 2rem;
   margin-right: 2rem;
 }
@@ -514,11 +514,25 @@
 }
 
 .categorias {
-  margin-top: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .categorias__titulo {
-  margin-bottom: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  -ms-flex-preferred-size: 30px;
+      flex-basis: 30px;
+  /* identical to box height */
+  color: #000000;
 }
 
 .categorias__container {
@@ -554,7 +568,7 @@
   border: 1px solid #ffffff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .boton-alimento--cate-activo {
@@ -631,18 +645,13 @@
 }
 
 .producto-ficha__titulo {
+  -ms-flex-preferred-size: 30px;
+      flex-basis: 30px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
   color: #000000;
 }
 
@@ -732,8 +741,8 @@
 
 .burger-container {
   z-index: 1;
-  margin-left: 3.4rem;
-  margin-right: 3.4rem;
+  margin-left: 10%;
+  margin-right: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -742,10 +751,17 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 30px;
-  padding-top: 63px;
+  padding-top: 43px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 340px) {
+  .burger-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
 
 .burger-container__titulo {
@@ -765,6 +781,8 @@
           align-items: center;
   text-align: center;
   color: #000000;
+  -ms-flex-preferred-size: 30px;
+      flex-basis: 30px;
 }
 
 .burger-container__resumen {
@@ -791,7 +809,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 328px;
+  width: 90%;
   height: 58px;
   background: #f64444;
   border: 1px solid #000000;
@@ -841,6 +859,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.burger-texto {
+  height: 54px;
 }
 
 .burger-texto__ {

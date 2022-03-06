@@ -3,7 +3,7 @@
     //   margin-right: 9%;
     display: flex;
     flex-direction: column;
-    gap: 43px;
+    gap: 35px;
     margin-left: 2rem;
     margin-right: 2rem;
     //  height: 510px;
@@ -271,9 +271,23 @@
 }
 
 .categorias {
-    margin-top: -10px;
+    //margin-top: -10px;
+    display:flex;
+    flex-direction:column;
+
     &__titulo {
-        margin-bottom: 14px;
+        
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 15px;
+line-height: 18px;
+flex-basis: 30px;
+/* identical to box height */
+
+
+color: #000000;
+     //   margin-bottom: 14px;
     }
 
     &__container {
@@ -310,7 +324,7 @@
     background-color: #b1a0a0;
     border: 1px solid #ffffff;
     box-sizing: border-box;
-    border-radius: 25px;
+    border-radius: 20px;
 
     &--cate-activo {
         background-color: #ef4848;
@@ -369,16 +383,14 @@
     &__titulo {
         //   width: 143px;
         //   height: 16px;
+        flex-basis: 30px;
 
-        font-family: Roboto;
+        font-family: Roboto; //podria ser clase
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
         line-height: 16px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-
+       
         color: #000000;
     }
 
