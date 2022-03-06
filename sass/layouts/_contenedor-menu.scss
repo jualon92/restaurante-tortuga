@@ -3,7 +3,7 @@
     //   margin-right: 9%;
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 40px;
     margin-left: 2rem;
     margin-right: 2rem;
     //  height: 510px;
@@ -22,6 +22,14 @@
         margin-left: 10%;
         margin-right: 10%;
     }
+}
+
+.backforth{
+     
+    position: absolute;
+    bottom: 41%;
+    left: 80%;
+    width: 40px;
 }
 
 .menu-header {
@@ -357,9 +365,15 @@ color: #000000;
 }
 
 .productos {
-    display: flex;
-    flex-direction: row;
 
+    //con baldosa flex, productos desplazamiento horizontal
+   //  display: flex;
+   //  flex-direction: row;
+   //  row-gap: 20px;
+    // flex-wrap: wrap;
+
+    display: -webkit-box;
+   overflow: scroll; // con scroll a x+
     min-height: 187px;
     //  background-color: blue;
     //  margin-top: -20px;
@@ -383,7 +397,7 @@ color: #000000;
     &__titulo {
         //   width: 143px;
         //   height: 16px;
-        flex-basis: 30px;
+        flex-basis: 20px;
 
         font-family: Roboto; //podria ser clase
         font-style: normal;

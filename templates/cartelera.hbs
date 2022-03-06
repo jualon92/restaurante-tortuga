@@ -1,18 +1,12 @@
-<div class="productos__item1 productos__item producto-ficha comida " id="hamburguesas">
-
-    <img class="producto-ficha__foto" src={{imagen}} alt="">
-
-    <div class="p1 producto-ficha__titulo">{{titulo}}</div>
-    <div class="p2 producto-ficha__descripcion">{{descripcion}}</div>
-    <div class="producto-ficha__precio">{{precio}}</div>
-</div>
-<div class="productos__item2 productos__item producto-ficha comida">
-
-    <img class="producto-ficha__pollo" src="{{imagen}}" alt="hamburguesa bailarina">
-
-    <div class="p1 producto-ficha__titulo">Burger Dancing Chicken</div>
-    <div class="p2 producto-ficha__descripcion">Pollo bailarin </div>
-    <div class="producto-ficha__precio">$ 11.25</div>
-
-
-</div>
+{{#each burgerList}}
+<div class="productos__item1 productos__item producto-ficha comida " id="hamburguesas" 
+onclick='saludar(event,this,{{@index}})' <!-- @index permite saber donde estoy ubicado, podria hacerse que objetos tengan objectId --> 
+ 
+           
+            <img class="producto-ficha__foto" src="{{imagenCartelera}}" alt="" >
+      
+            <div class="p1 producto-ficha__titulo">{{nombre}}</div>
+            <div class="p2 producto-ficha__descripcion">{{descripcion}}</div>
+            <div class="producto-ficha__precio">{{precio}}</div>
+ </div>
+{{/each}}

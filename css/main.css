@@ -228,7 +228,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 35px;
+  gap: 40px;
   margin-left: 2rem;
   margin-right: 2rem;
 }
@@ -252,6 +252,13 @@
     margin-left: 10%;
     margin-right: 10%;
   }
+}
+
+.backforth {
+  position: absolute;
+  bottom: 41%;
+  left: 80%;
+  width: 40px;
 }
 
 .menu-header {
@@ -605,12 +612,7 @@
 
 .productos {
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  overflow: scroll;
   min-height: 187px;
 }
 
@@ -645,8 +647,8 @@
 }
 
 .producto-ficha__titulo {
-  -ms-flex-preferred-size: 30px;
-      flex-basis: 30px;
+  -ms-flex-preferred-size: 20px;
+      flex-basis: 20px;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;

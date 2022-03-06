@@ -1,11 +1,21 @@
 
 
 async function initMenu() {
+    let productoContainer = document.querySelector(".productos")
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
     console.warn("initMenu")
     let listaCategorias = Array.from(document.querySelectorAll(".boton-alimento"))
     let indiceActivo = 0
     var indiceGuardado = ""
+
+    
+    let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
+    var template =  Handlebars.compile(plantillaHbs);
+    let html = template({burgerList}) 
+    console.log("html es : " + html )
+    productoContainer.innerHTML = html 
+ 
+
 
 
     document.querySelector("body").classList.remove("body__carta")
@@ -85,3 +95,16 @@ async function initMenu() {
 }
     //agregar listeners a botones
 
+function saludar(e,ele, indiceGuardado){
+    console.log(indiceGuardado)
+    
+    
+    localStorage.setItem("indiceKey", indiceGuardado); 
+    e.preventDefault() //necesario  
+    console.log("hola ", ele )
+    console.log("viejo hash: " + location.hash)
+    let id = "comida"
+    location.hash = id //nuevo hash
+    console.log("nuevo hash" + location.hash)
+      
+}

@@ -9,7 +9,8 @@ let burgerList = [
     usual hamburguesa`,
         estrellas: 4.5,
         calorias: "180kcal",
-        tiempo: "5-15min"
+        tiempo: "5-15min",
+        imagenCartelera: "images/ambur.avif"
     }
     ,
     {
@@ -20,8 +21,21 @@ let burgerList = [
         texto: `Un pollo alegre es un sabor diferente`,
         estrellas: 4.2,
         calorias: "130kcal",
-        tiempo: "10-25min"
+        tiempo: "10-25min",
+        imagenCartelera: "/images/ham3.png",
+    },
+    {
+        nombre: "Tower Burger MAX",
+        descripcion: "Hamburguesa de multiples pisos",
+        imagen: "/images/towerburger-grande.png",
+        precio: `$ 26.25`,
+        texto: `Hamburguesa recomendada para mas de una persona, procurar posicionarla en el medio de la mesa para no causar una desgracia`,
+        estrellas: 5,
+        calorias: "250kcal",
+        tiempo: "35min",
+        imagenCartelera: "/images/towerburger.png",
     }
+
 ]
 
  
