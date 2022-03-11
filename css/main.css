@@ -232,6 +232,10 @@
   gap: 40px;
   margin-left: 2rem;
   margin-right: 2rem;
+  padding-top: 10px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   height: calc( 100vh - 20px);
 }
 
@@ -755,6 +759,10 @@
   z-index: -1;
 }
 
+.foto__burger {
+  top: 10%;
+}
+
 .burger-container {
   z-index: 1;
   margin-left: 10%;
@@ -766,8 +774,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 30px;
-  padding-top: 43px;
+  height: calc(100vh - 30px);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
