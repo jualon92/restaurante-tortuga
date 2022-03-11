@@ -3,13 +3,13 @@
     //   margin-right: 9%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+     gap: 30px;
     margin-left: 2rem;
     margin-right: 2rem;
-    padding-top: 10px;
-    justify-content: space-evenly; 
+   // padding-top: 10px;
+    justify-content: space-between;
     //  height: 510px;
-    height: calc( 100vh - 20px );
+    min-height: calc( 100vh - 20px );
 
     @media (max-width: 340px)  {
         margin-left: 0.5rem;
@@ -308,6 +308,7 @@
     &__container {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         //   height: 43px;
         //      height: 50px;
         //    background-color: red;
