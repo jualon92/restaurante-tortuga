@@ -17,6 +17,9 @@ async function initComida(){
     document.querySelector("body").classList.add("body__carta")
 
     
+     /* ------------------------------------------*/
+    /*               ir hacia atras               */
+    /* ------------------------------------------*/
     document.querySelector(".foto__burger").addEventListener("click", async (e) =>{
         location.hash = "menu"
     })

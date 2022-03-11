@@ -38,7 +38,19 @@ let burgerList = [
 
 ]
 
- 
+let pizzaList = [  
+    {
+        nombre: "Pizza placeholder",
+        descripcion: "Pizza Pizza",
+        imagen:  "/images/hamGrande.avif",
+        precio: "11.11",
+        texto:"Lorem",
+        estrellas:"2",
+        calorias:"1kcal",
+        tiempo:"5min",
+        imagenCartelera: "/images/ham3.png"
+    }
+]
      
 function getRutaFromHTML(nombre){
     

@@ -1,12 +1,15 @@
-{{#each burgerList}}
-<div class="productos__item1 productos__item producto-ficha comida " id="hamburguesas" 
-onclick='saludar(event,this,{{@index}})' <!-- @index permite saber donde estoy ubicado, podria hacerse que objetos tengan objectId --> 
  
-           
-            <img class="producto-ficha__foto" src="{{imagenCartelera}}" alt="" >
-      
-            <div class="p1 producto-ficha__titulo">{{nombre}}</div>
-            <div class="p2 producto-ficha__descripcion">{{descripcion}}</div>
-            <div class="producto-ficha__precio">{{precio}}</div>
- </div>
+
+{{#each burgerList}}
+<div class="productos__item1 productos__item producto-ficha comida " id="hamburguesas" style=""
+    onclick='saludar(event,this,{{@index}})' <!-- @index permite saber donde estoy ubicado, podria hacerse que objetos
+    tengan objectId -->
+
+
+    <img class="producto-ficha__foto" src="{{imagenCartelera}}" alt="">
+
+    <div class="p1 producto-ficha__titulo">{{nombre}}</div>
+    <div class="p2 producto-ficha__descripcion">{{descripcion}}</div>
+    <div class="producto-ficha__precio">{{precio}}</div>
+</div>
 {{/each}}

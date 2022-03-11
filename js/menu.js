@@ -1,22 +1,28 @@
 
-
+//const horizontal = "transform: rotate(180deg)"
+//const vertical = "transform: rotate(90deg);"
+ 
 async function initMenu() {
     let productoContainer = document.querySelector(".productos")
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
     console.warn("initMenu")
     let listaCategorias = Array.from(document.querySelectorAll(".boton-alimento"))
+    let estaVertical = true
     let indiceActivo = 0
     var indiceGuardado = ""
-
+     
     
     let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
     var template =  Handlebars.compile(plantillaHbs);
     let html = template({burgerList}) 
-    console.log("html es : " + html )
+  //  document.querySelector(".contenedor-productos__btn-ordenar").style = window.sessionStorage.getItem("directionChoice")
+    //console.log("html es : " + html )
     productoContainer.innerHTML = html 
  
 
-
+    document.querySelector(".boton-alimento").addEventListener("click", (e) => {
+        let quienSoy = this.id 
+    })
 
     document.querySelector("body").classList.remove("body__carta")
     //cargo 
@@ -92,6 +98,27 @@ async function initMenu() {
     })
     */
 
+    /* ------------------------------------------------------------ */
+    /*      Desplazamiento de menu productos                        */
+    /* ------------------------------------------------------------ */
+
+    document.querySelector(".contenedor-productos__btn-ordenar").addEventListener("click", (e) =>{
+        if (estaVertical){
+            document.querySelector(".productos").style = "flex-wrap:wrap; row-gap:15px; ";
+            document.querySelector(".contenedor-productos__btn-ordenar").style =  "transform: rotate(90deg);"
+            estaVertical = false
+          //  window.sessionStorage.setItem("directionChoice", vertical)
+        }else{
+            document.querySelector(".productos").style = "";
+            estaVertical = true
+            document.querySelector(".contenedor-productos__btn-ordenar").style =  "transform: rotate(180deg);"
+            //que recuerde la decision
+         //   window.sessionStorage.setItem("directionChoice", horizontal )
+
+        }
+        
+
+    })
 }
     //agregar listeners a botones
 
