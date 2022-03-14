@@ -37,19 +37,31 @@ let burgerList = [
     }
 
 ]
+ 
+
 
 let pizzaList = [  
     {
-        nombre: "Pizza placeholder",
+        nombre: "Fire Pizza",
+        descripcion: "Pizza Extra picante",
+        imagen:  "/images/hamGrande.avif",
+        precio: "6.11",
+        texto:"No apta para paladares sensibles",
+        estrellas:"1",
+        calorias:"1kcal",
+        tiempo:"12min",
+        imagenCartelera: "/images/pizza10.avif"
+    },{
+        nombre: "Pizza Salamin",
         descripcion: "Pizza Pizza",
         imagen:  "/images/hamGrande.avif",
-        precio: "11.11",
-        texto:"Lorem",
-        estrellas:"2",
-        calorias:"1kcal",
-        tiempo:"5min",
-        imagenCartelera: "/images/ham3.png"
-    }
+        precio: "16.11",
+        texto:"Salamandra",
+        estrellas:"5",
+        calorias:"1.4kcal",
+        tiempo:"15min",
+        imagenCartelera: "/images/pizza15.avif"
+    } 
 ]
      
 function getRutaFromHTML(nombre){
@@ -59,5 +71,14 @@ function getRutaFromHTML(nombre){
     return ruta
 }
 
-
-let contadorCarrito = 0
+ 
+ 
+function getLista(nombreLista){ //quizas con  JSON.parse, buscar una alternativa que reemplac un if o mapa
+    if (nombreLista == "pizzaList"){
+        return pizzaList
+    }else if(nombreLista == "burgerList"){
+        return burgerList
+    }
+}
+ 
+ 

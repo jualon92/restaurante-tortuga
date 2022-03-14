@@ -1,7 +1,11 @@
 
 //const horizontal = "transform: rotate(180deg)"
 //const vertical = "transform: rotate(90deg);"
+
  
+
+ 
+
 async function initMenu() {
     let productoContainer = document.querySelector(".productos")
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
@@ -11,19 +15,39 @@ async function initMenu() {
     let indiceActivo = 0
     var indiceGuardado = ""
      
+    //contenido estatica cartelera
+  /*  async function getHTMLCartelera(listaProductos){
+        let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
+        var template =  Handlebars.compile(plantillaHbs);
+        let html = template({listaProductos}) 
+        console.warn(html)
+        return html 
+    }*/
     
     let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
     var template =  Handlebars.compile(plantillaHbs);
-    let html = template({burgerList}) 
+    let html = template({ item : burgerList}) 
+    productoContainer.innerHTML =   html
+
   //  document.querySelector(".contenedor-productos__btn-ordenar").style = window.sessionStorage.getItem("directionChoice")
     //console.log("html es : " + html )
-    productoContainer.innerHTML = html 
- 
-
-    document.querySelector(".boton-alimento").addEventListener("click", (e) => {
-        let quienSoy = this.id 
-    })
-
+  
+    
+    
+    document.querySelectorAll(".boton-alimento").forEach(ele => {
+        ele.addEventListener("click", async (e) => {
+            
+            
+            let listaProductosAMostrar = getLista(ele.id)
+            
+            let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
+            var template =  Handlebars.compile(plantillaHbs);
+            let html = template({ item :  listaProductosAMostrar}) 
+            productoContainer.innerHTML =   html
+        })
+    
+    });
+     
     document.querySelector("body").classList.remove("body__carta")
     //cargo 
 

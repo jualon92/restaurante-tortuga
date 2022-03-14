@@ -8,7 +8,7 @@ class Main {
             initInicio()
         } else if (id == "menu") {
             initMenu()
-        } else if (id == "comida") {
+        }else if (id == "comida") {
             initComida()
         }
 
