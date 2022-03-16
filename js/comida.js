@@ -1,3 +1,4 @@
+
 async function initComida(){
  
     function getContadorCompras(){
@@ -10,8 +11,12 @@ async function initComida(){
     var template = Handlebars.compile(plantillaHbs);
     let index = JSON.parse(localStorage.getItem("indiceKey"))
     
-    let html = template(burgerList[index])
-    console.log(burgerList[index])
+   // let html = template(burgerList[index])
+   let listaActual =  JSON.parse(window.localStorage.getItem("listaActiva"))
+   console.log("burger lista sele", listaActual)
+   let html = template(listaActual [index])
+
+    console.log(listaActual[index])
    //  console.log("template listo " + html)
     document.querySelector("main").innerHTML = html
     document.querySelector("body").classList.add("body__carta")
@@ -22,6 +27,7 @@ async function initComida(){
     /* ------------------------------------------*/
     document.querySelector(".foto__burger").addEventListener("click", async (e) =>{
         location.hash = "menu"
+        console.log("antes", listaActual)
     })
 
     document.querySelector(".btn-carrito").addEventListener("click", async (e) => {

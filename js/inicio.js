@@ -7,6 +7,7 @@ async function initInicio(){
         let id = document.querySelector(".btnP").id // id de boton
         location.hash = id //nuevo hash
         console.log("nuevo hash" + location.hash)
+         
     })
 
 

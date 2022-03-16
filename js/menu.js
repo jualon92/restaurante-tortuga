@@ -2,9 +2,10 @@
 //const horizontal = "transform: rotate(180deg)"
 //const vertical = "transform: rotate(90deg);"
 
- 
+let decisionId = "burgerList"
 
- 
+window.localStorage.setItem("listaActiva", JSON.stringify(burgerList))
+ //que recuerde boton activo
 
 async function initMenu() {
     let productoContainer = document.querySelector(".productos")
@@ -24,9 +25,12 @@ async function initMenu() {
         return html 
     }*/
     
+
     let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
     var template =  Handlebars.compile(plantillaHbs);
-    let html = template({ item : burgerList}) 
+    let listaActual  = JSON.parse(window.localStorage.getItem("listaActiva"))
+    console.log("cartelera en puntero", listaActual    )
+    let html = template({ item : listaActual}) 
     productoContainer.innerHTML =   html
 
   //  document.querySelector(".contenedor-productos__btn-ordenar").style = window.sessionStorage.getItem("directionChoice")
@@ -34,6 +38,8 @@ async function initMenu() {
   
     
     
+    
+    //al presionar un producto cartelera
     document.querySelectorAll(".boton-alimento").forEach(ele => {
         ele.addEventListener("click", async (e) => {
             
@@ -44,41 +50,71 @@ async function initMenu() {
             var template =  Handlebars.compile(plantillaHbs);
             let html = template({ item :  listaProductosAMostrar}) 
             productoContainer.innerHTML =   html
+            
+            //sets lista a tomar files de cartas
+            console.log("set lista", listaProductosAMostrar)
+            let listaString = JSON.stringify(listaProductosAMostrar)
+             window.localStorage.setItem("listaActiva", listaString )
+             console.log("ele recordado", ele.id)
+             decisionId = ele.id
+             console.log("asignando")
+             asignarComidaACarta()
+             //cuando seleccione ese pasa ser el e le recordado en sesion
+             // al tocar menu, renderiza plantilla con la decision
+             
         })
+
+
     
     });
+
+
+
+    
      
     document.querySelector("body").classList.remove("body__carta")
     //cargo 
 
-    for (const producto of listaProductos) {
-        producto.addEventListener("click", async (e) => {
-         
-            e.preventDefault() //necesario  
-            console.log("viejo hash: " + location.hash)
-            let id = "comida"
-            location.hash = id //nuevo hash
-            console.log("nuevo hash" + location.hash)
-            let indice = listaProductos.indexOf(producto)
-            
-            indiceGuardado = indice
-            localStorage.setItem("indiceKey", indiceGuardado);
-        })
-    }
 
+
+    function asignarComidaACarta(){
+        for (const producto of listaProductos) {
+            producto.addEventListener("click", async (e) => {
+             
+                e.preventDefault() //necesario  
+                console.log("viejo hash: " + location.hash)
+                let id = "comida"
+                location.hash = id //nuevo hash
+                console.log("nuevo hash" + location.hash)
+                let indice =  Array.from(document.querySelectorAll(".productos__item")).indexOf(producto)
+                console.log("DDDDDDDDDDDDDDDDDDD ", indice)
+                indiceGuardado = indice
+                localStorage.setItem("indiceKey", indiceGuardado);
+            })
+        }
+    }
+    
+    asignarComidaACarta()
 
     //botonera categorias
     for (const btnCategoria of listaCategorias) {
         btnCategoria.addEventListener("click", async (e) => {
 
-            //pintar 
+            //pintar al clickear
             listaCategorias[indiceActivo].classList.remove("boton-alimento--cate-activo")
             //   quitarCategorias(listaCategorias)
             btnCategoria.classList.add("boton-alimento--cate-activo")
 
             indiceActivo = listaCategorias.indexOf(btnCategoria)
+            console.log(indiceActivo)
 
-        })
+        })  
+        //pintar decision guardada
+        if (btnCategoria.id === decisionId){
+            console.log(btnCategoria.id, "correcto")
+            btnCategoria.classList.add("boton-alimento--cate-activo")
+            indiceActivo = listaCategorias.indexOf(btnCategoria)
+        }
 
 
     }
