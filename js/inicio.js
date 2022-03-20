@@ -1,4 +1,4 @@
-const precargarImagenes = (e) => {
+/*const precargarImagenes = (e) => {
     const imageArray = new Array("images/burgerGigante.png", 
     "images/hamGrande.avif", "images/pizza-grande15.avif", "images/ambur.avif",
     "/images/towerburger-grande.png",
@@ -19,7 +19,7 @@ const precargarImagenes = (e) => {
 }
 
 this.addEventListener("DOMContentLoaded", precargarImagenes);
-
+*/
     
 
 async function initInicio() {
