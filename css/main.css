@@ -453,6 +453,24 @@
   }
 }
 
+@media (min-width: 1399px) {
+  .box-ordenar {
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1000px) {
+  .box-ordenar {
+    padding-right: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .box-ordenar__fondo {
   /*
         width: inherit;

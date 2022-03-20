@@ -179,6 +179,17 @@
         padding-left: 5%;
         padding-right: 5%;
     }
+    @media (min-width: 1399px) { 
+        align-content: space-around;;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    @media (min-width: 760px) and (max-width:1000px) { 
+        padding-right: 0;
+        align-items: center;
+    }
+    
 
     //  background: rgba(236, 106, 0, 0.25); //bajo contraste
     background-color: #ec6a0066; //
