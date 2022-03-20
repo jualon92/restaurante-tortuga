@@ -179,6 +179,8 @@ async function initMenu() {
         
 
     })
+
+    componentHandler.upgradeDom()  // necesario para que MDL conozca nuevos elementos agregados de plantilla
 }
     //agregar listeners a botones
 

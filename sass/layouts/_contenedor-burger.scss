@@ -43,7 +43,8 @@
 
     &__imagen {
       //  width: 286px;
-       // height: 241px;
+       // height: 241px;    }
+       max-width:-webkit-fill-available;;
     }
     &__texto{
          
