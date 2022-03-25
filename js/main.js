@@ -10,6 +10,8 @@ class Main {
             initMenu()
         }else if (id == "comida") {
             initComida()
+        }else if (id == "carrito") {
+            initCarrito()
         }
 
     }

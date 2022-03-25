@@ -180,6 +180,24 @@ async function initMenu() {
 
     })
 
+    let fueClickeado = false
+    document.querySelector(".footer-nav__carrito").addEventListener("click", e => {
+       /* if (fueClickeado === false){ 
+            e.stopPropagation()
+            fueClickeado = true
+            let target =  document.querySelector(".modalTarget")
+            console.log(fueClickeado)
+            target.showModal();
+        }*/
+        location.hash = "carrito"
+        
+         
+    })
+
+    document.querySelector(".cerrar").addEventListener("click", e => {
+       document.querySelector(".modalTarget").close()
+        
+    })
     componentHandler.upgradeDom()  // necesario para que MDL conozca nuevos elementos agregados de plantilla
 }
     //agregar listeners a botones

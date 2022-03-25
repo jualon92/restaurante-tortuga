@@ -221,6 +221,28 @@
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+body {
+  background-color: whitesmoke;
+}
+
+.modalTarget {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  top: 10%;
+}
+
+.carrito__btn-accion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 10px;
+  gap: 15px;
+}
+
 .contenedor-menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1022,6 +1044,188 @@
           align-items: center;
   text-align: center;
   color: #ef4848;
+}
+
+.carrito-cartas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding-bottom: 1px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: solid #ddd;
+  border-bottom-width: 2px;
+  width: 100%;
+  min-height: 100px;
+}
+
+.carrito-cartas__precio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.carrito-cartas__numero-precio {
+  font-size: 24px;
+}
+
+.carrito-cartas__item {
+  max-width: 90px;
+}
+
+.carrito-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 1px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: solid #ddd;
+  border-bottom-width: 2px;
+  width: 100%;
+  min-height: 100px;
+}
+
+.shopping_basket {
+  width: 100px;
+}
+
+.titulo-container {
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.contenedor-resumen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-comprarCarrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 15px;
+}
+
+.carrito__contador {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  height: 34px;
+  background: #f64444;
+  border-radius: 25px;
+}
+
+.carrito-titulo {
+  font-size: 25px;
+  margin: 0px;
+  margin-left: calc((100vw - 200px) / 2);
+}
+
+.carrito-interfaz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.carrito-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 34px;
+}
+
+.carrito-total__numero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.carrito-total__simbolo {
+  font-size: 34px !important;
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.carrito-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.carrito-header__img {
+  padding: 20px;
+  padding-left: 6px;
+}
+
+.carrito-header__titulo {
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 25px;
+  margin: 0px;
+  margin-left: calc((100vw - 200px) / 2);
+}
+
+.carrito-header__titulo__nombre {
+  width: 100%;
 }
 
 * {

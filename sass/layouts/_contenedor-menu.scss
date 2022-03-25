@@ -1,3 +1,20 @@
+body{
+    background-color: whitesmoke;
+}
+
+.modalTarget{
+    min-width: fit-content;
+    top: 10%;
+    
+}
+.carrito{
+    &__btn-accion{
+        display:flex;
+        justify-content: end;
+        padding:10px;
+        gap: 15px;
+    }
+}
 .contenedor-menu {
     //   margin-left: 9%;
     //   margin-right: 9%;

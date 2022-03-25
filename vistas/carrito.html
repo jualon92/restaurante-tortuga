@@ -1,0 +1,110 @@
+<!--<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+        <td>25</td>
+        <td>$2.90</td>
+        <td>SSS</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+        <td> - 50 + </td>
+        <td>$1.25</td>
+        <td>SSS</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+        <td>10</td>
+        <td>$2.35</td>
+        <td>SSS</td>
+      </tr>
+      <tr>
+        <td class="mdl-data-table__cell--non-numeric">Total</td>
+        <td>102</td>
+        <td>$23.35</td>
+         
+      </tr>
+      
+    </tbody>
+  </table> -->
+
+<div class="contenedor-carro">
+  <div>
+    <header class="carrito-header">
+        <img class="carrito-header__img" src="/images/atras.png" alt="icono hacia atras para volver a menu">
+ 
+
+      <!-- Colored FAB button with ripple -->
+     <!--  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">arrow_back</i>
+      </button>-->
+
+      <div class="carrito-header__titulo">
+        <div class="carrito-header__nombre" width="100%">Carrito</div>
+      </div>
+    </header>
+
+
+  </div>
+
+  <div class="contenedor-resumen">
+    <div class="carrito-cartas">
+      <div>
+        <button  onclick="quitarEsteProducto()"
+          class=" carrito-cartas__remove mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-button--mini-fab">
+          <i class=" material-icons">remove_shopping_cart</i>
+        </button>
+      </div>
+      <div class="carrito-cartas__img boton__img">
+        <img src="/images/ham3.png" width="80px" alt="">
+      </div>
+      <div class="carrito-cartas__item">
+
+        <div class="carrito-cartas__titulo">Hamburguesa Gigante</div>
+
+        <div class="carrito-cartas__unidades">Unidades: 4</div>
+
+      </div>
+
+      <div class="carrito-cartas__precio"> <span class="material-icons">
+          attach_money
+        </span>
+        <div class="carrito-cartas__numero-precio">99.99</div>
+      </div>
+    </div>
+
+
+    <div class="carrito-interfaz">
+      <div class="carrito-total">
+
+        Total:
+        <div class="carrito-total__numero">
+
+          <span class="material-icons carrito-total__simbolo">
+            attach_money
+          </span>
+          3333
+        </div>
+      </div>
+      <div class="btn-comprarCarrito">
+        <button class=" mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          Comprar <span class="material-icons">
+            shopping_cart_checkout
+          </span>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          Borrar Todo
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
