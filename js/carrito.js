@@ -1,7 +1,5 @@
 let listaCarrito = [
-    { imagen: "/images/ham3.png", nombre: "Hamburguesa Gigante", unidades: 4, precio: 99 },
-    { imagen: "/images/pizza15.avif", nombre: "Pizza salamin", unidades: 2, precio: 33 },
-]
+     ]
 async function initCarrito() {
     console.warn("carrito iniciado")
     componentHandler.upgradeDom()

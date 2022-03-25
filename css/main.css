@@ -1033,7 +1033,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
   padding-bottom: 1px;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1053,14 +1054,18 @@ body {
           align-items: center;
   -ms-flex-item-align: center;
       align-self: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  min-width: 67px;
 }
 
 .carrito-cartas__numero-precio {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .carrito-cartas__item {
-  max-width: 90px;
+  max-width: 80px;
 }
 
 .carrito-cards {
@@ -1101,6 +1106,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 5px;
 }
 
 .btn-comprarCarrito {
