@@ -1,0 +1,53 @@
+{{#each item}}
+<div class="carrito-cartas">
+    <div>
+        <button onclick="quitarEsteProducto()"
+            class=" carrito-cartas__remove mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-button--mini-fab">
+            <i class=" material-icons">remove_shopping_cart</i>
+        </button>
+    </div>
+    <div class="carrito-cartas__img boton__img">
+        <img src={{img}} width="80px" alt="">
+    </div>
+    <div class="carrito-cartas__item">
+
+        <div class="carrito-cartas__titulo">{{nombre}}</div>
+
+        <div class="carrito-cartas__unidades">Unidades: {{unidades}}</div>
+
+    </div>
+
+    <div class="carrito-cartas__precio"> <span class="material-icons">
+            attach_money
+        </span>
+        <div class="carrito-cartas__numero-precio">{{precio}}</div>
+    </div>
+</div>
+{{/each}}
+
+
+<div class="carrito-interfaz">
+    <div class="carrito-total">
+
+        Total:
+        <div class="carrito-total__numero">
+
+            <span class="material-icons carrito-total__simbolo">
+                attach_money
+            </span>
+            3333
+        </div>
+    </div>
+    <div class="btn-comprarCarrito">
+        <button class=" mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Comprar <span class="material-icons">
+                shopping_cart_checkout
+            </span>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Borrar Todo
+        </button>
+    </div>
+</div>
+
+</div>
