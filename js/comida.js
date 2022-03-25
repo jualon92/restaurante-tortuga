@@ -30,16 +30,18 @@ async function initComida(){
         console.log("antes", listaActual)
     })
 
+     
     document.querySelector(".btn-carrito").addEventListener("click", async (e) => {
        // console.warn("agregar al carrito")
         //consultar contador
-        
+
         let cantidadAComprar = getContadorCompras()
         console.warn("cantidad a comprar " + cantidadAComprar)
 
         let contador = JSON.parse(window.sessionStorage.getItem("contadorCompras"))
         window.sessionStorage.setItem("contadorCompras", cantidadAComprar + contador)
         console.warn("ACU comprados " + window.sessionStorage.getItem("contadorCompras"))
+      //  window.sessionStorage.setItem("listaPedidos", )
         location.hash = "menu"
         
     })
