@@ -15,7 +15,7 @@
   gap: 0.925rem;
   padding-bottom: 50px;
   overflow: hidden;
-  height: calc( 100vh - 20px);
+  height: 100vh;
 }
 
 .foto__burger {
@@ -223,24 +223,6 @@
 
 body {
   background-color: whitesmoke;
-}
-
-.modalTarget {
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-  top: 10%;
-}
-
-.carrito__btn-accion {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  padding: 10px;
-  gap: 15px;
 }
 
 .contenedor-menu {
