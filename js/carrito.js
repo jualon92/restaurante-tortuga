@@ -74,6 +74,18 @@ async function quitarEsteProducto(indice) {
     let html = template({ item: listaCarrito })
     document.querySelector(".contenedor-resumen").innerHTML = html
 
+    //total, deberia ser funcion
+    let acuTotal = 0
+    let listaPrecios = document.querySelectorAll(".carrito-cartas__numero-precio")
+    listaPrecios.forEach(ele => {
+        const suma = parseFloat(ele.innerHTML)
+        console.warn(suma)
+        acuTotal += suma
+    });
+    //calcular total
+    document.querySelector(".carrito-total__resultado").innerHTML = acuTotal
+
+
 }
 
 
@@ -87,5 +99,5 @@ async function borrarTodo() {
     var template = Handlebars.compile(plantillaHbs);
     let html = template({ item: listaCarrito })
     document.querySelector(".contenedor-resumen").innerHTML = html
-
+    
 }
