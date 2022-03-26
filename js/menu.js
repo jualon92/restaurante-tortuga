@@ -193,11 +193,11 @@ async function initMenu() {
         document.querySelector(".box-ordenar__boton").addEventListener("click", e => {
             location.hash = "carrito"
         })
-
+        /*
         document.querySelector(".cerrar").addEventListener("click", e => {
             document.querySelector(".modalTarget").close()
 
-        })
+        })*/
     }
 
 
