@@ -1,7 +1,7 @@
 {{#each item}}
 <div class="carrito-cartas">
     <div>
-        <button onclick="quitarEsteProducto()"
+        <button onclick='quitarEsteProducto({{@index}})'
             class=" carrito-cartas__remove mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-button--mini-fab">
             <i class=" material-icons">remove_shopping_cart</i>
         </button>
@@ -35,7 +35,7 @@
             <span class="material-icons carrito-total__simbolo">
                 attach_money
             </span>
-            <div class="carrito-total__resultado">3333</div> 
+            <div class="carrito-total__resultado">0</div> 
         </div>
     </div>
     <div class="btn-comprarCarrito">
@@ -44,7 +44,7 @@
                 shopping_cart_checkout
             </span>
         </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <button onclick="borrarTodo()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Borrar Todo
         </button>
     </div>
