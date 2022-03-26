@@ -5,7 +5,7 @@
 let decisionId = "burgerList"
 
 window.localStorage.setItem("listaActiva", JSON.stringify(burgerList))
- //que recuerde boton activo
+//que recuerde boton activo
 
 async function initMenu() {
     let productoContainer = document.querySelector(".productos")
@@ -15,85 +15,85 @@ async function initMenu() {
     let estaVertical = true
     let indiceActivo = 0
     var indiceGuardado = ""
-     
+
     //contenido estatica cartelera
-  /*  async function getHTMLCartelera(listaProductos){
-        let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
-        var template =  Handlebars.compile(plantillaHbs);
-        let html = template({listaProductos}) 
-        console.warn(html)
-        return html 
-    }*/
-    
+    /*  async function getHTMLCartelera(listaProductos){
+          let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
+          var template =  Handlebars.compile(plantillaHbs);
+          let html = template({listaProductos}) 
+          console.warn(html)
+          return html 
+      }*/
+
 
     let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
-    var template =  Handlebars.compile(plantillaHbs);
-    let listaActual  = JSON.parse(window.localStorage.getItem("listaActiva"))
-    console.log("cartelera en puntero", listaActual    )
-    let html = template({ item : listaActual}) 
-    productoContainer.innerHTML =   html
+    var template = Handlebars.compile(plantillaHbs);
+    let listaActual = JSON.parse(window.localStorage.getItem("listaActiva"))
+    console.log("cartelera en puntero", listaActual)
+    let html = template({ item: listaActual })
+    productoContainer.innerHTML = html
 
-  //  document.querySelector(".contenedor-productos__btn-ordenar").style = window.sessionStorage.getItem("directionChoice")
+    //  document.querySelector(".contenedor-productos__btn-ordenar").style = window.sessionStorage.getItem("directionChoice")
     //console.log("html es : " + html )
-  
-    
-    
-    
+
+
+
+
     //al presionar un producto cartelera
     document.querySelectorAll(".boton-alimento").forEach(ele => {
         ele.addEventListener("click", async (e) => {
-            
-            
+
+
             let listaProductosAMostrar = getLista(ele.id)
-            
+
             let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
-            var template =  Handlebars.compile(plantillaHbs);
-            let html = template({ item :  listaProductosAMostrar}) 
-            productoContainer.innerHTML =   html
-            
+            var template = Handlebars.compile(plantillaHbs);
+            let html = template({ item: listaProductosAMostrar })
+            productoContainer.innerHTML = html
+
             //sets lista a tomar files de cartas
             console.log("set lista", listaProductosAMostrar)
             let listaString = JSON.stringify(listaProductosAMostrar)
-             window.localStorage.setItem("listaActiva", listaString )
-             console.log("ele recordado", ele.id)
-             decisionId = ele.id
-             console.log("asignando")
-             asignarComidaACarta()
-             //cuando seleccione ese pasa ser el e le recordado en sesion
-             // al tocar menu, renderiza plantilla con la decision
-             
+            window.localStorage.setItem("listaActiva", listaString)
+            console.log("ele recordado", ele.id)
+            decisionId = ele.id
+            console.log("asignando")
+            asignarComidaACarta()
+            //cuando seleccione ese pasa ser el e le recordado en sesion
+            // al tocar menu, renderiza plantilla con la decision
+
         })
 
 
-    
+
     });
 
 
 
-    
-     
+
+
     document.querySelector("body").classList.remove("body__carta")
     //cargo 
 
 
 
-    function asignarComidaACarta(){
+    function asignarComidaACarta() {
         for (const producto of listaProductos) {
             producto.addEventListener("click", async (e) => {
-             
+
                 e.preventDefault() //necesario  
                 console.log("viejo hash: " + location.hash)
                 let id = "comida"
                 location.hash = id //nuevo hash
                 console.log("nuevo hash" + location.hash)
-                let indice =  Array.from(document.querySelectorAll(".productos__item")).indexOf(producto)
+                let indice = Array.from(document.querySelectorAll(".productos__item")).indexOf(producto)
                 console.log("DDDDDDDDDDDDDDDDDDD ", indice)
                 indiceGuardado = indice
                 localStorage.setItem("indiceKey", indiceGuardado);
             })
         }
     }
-    
+
     asignarComidaACarta()
 
     //botonera categorias
@@ -108,9 +108,9 @@ async function initMenu() {
             indiceActivo = listaCategorias.indexOf(btnCategoria)
             console.log(indiceActivo)
 
-        })  
+        })
         //pintar decision guardada
-        if (btnCategoria.id === decisionId){
+        if (btnCategoria.id === decisionId) {
             console.log(btnCategoria.id, "correcto")
             btnCategoria.classList.add("boton-alimento--cate-activo")
             indiceActivo = listaCategorias.indexOf(btnCategoria)
@@ -123,7 +123,7 @@ async function initMenu() {
     let contadorMenu = document.querySelector(".footer-nav__contador-menu")
     if (contadorCompras > 0 && contadorCompras < 10) {
         document.querySelector(".footer-nav__carrito").src = "images/carritoRojo.svg"
-        
+
         contadorMenu.src = getRutaFromHTML(contadorCompras)
         contadorMenu.style = "display:block;  "
 
@@ -162,56 +162,61 @@ async function initMenu() {
     /*      Desplazamiento de menu productos                        */
     /* ------------------------------------------------------------ */
 
-    document.querySelector(".contenedor-productos__btn-ordenar").addEventListener("click", (e) =>{
-        if (estaVertical){
+    document.querySelector(".contenedor-productos__btn-ordenar").addEventListener("click", (e) => {
+        if (estaVertical) {
             document.querySelector(".productos").style = "flex-wrap:wrap; row-gap:15px; ";
-            document.querySelector(".contenedor-productos__btn-ordenar").style =  "transform: rotate(90deg);"
+            document.querySelector(".contenedor-productos__btn-ordenar").style = "transform: rotate(90deg);"
             estaVertical = false
-          //  window.sessionStorage.setItem("directionChoice", vertical)
-        }else{
+            //  window.sessionStorage.setItem("directionChoice", vertical)
+        } else {
             document.querySelector(".productos").style = "";
             estaVertical = true
-            document.querySelector(".contenedor-productos__btn-ordenar").style =  "transform: rotate(180deg);"
+            document.querySelector(".contenedor-productos__btn-ordenar").style = "transform: rotate(180deg);"
             //que recuerde la decision
-         //   window.sessionStorage.setItem("directionChoice", horizontal )
+            //   window.sessionStorage.setItem("directionChoice", horizontal )
 
         }
-        
+
 
     })
 
     let fueClickeado = false
-    document.querySelector(".footer-nav__carrito").addEventListener("click", e => {
-       /* if (fueClickeado === false){ 
-            e.stopPropagation()
-            fueClickeado = true
-            let target =  document.querySelector(".modalTarget")
-            console.log(fueClickeado)
-            target.showModal();
-        }*/
-        location.hash = "carrito"
-        
-         
-    })
 
-    document.querySelector(".cerrar").addEventListener("click", e => {
-       document.querySelector(".modalTarget").close()
-        
-    })
+    /* ------------------------------------------------------------ */
+    /*      Agrego listeners nav                                     */
+    /* ------------------------------------------------------------ */
+    function agregarListenersNav() {
+        document.querySelector(".footer-nav__carrito").addEventListener("click", e => {
+            location.hash = "carrito"
+        })
+
+        document.querySelector(".box-ordenar__boton").addEventListener("click", e => {
+            location.hash = "carrito"
+        })
+
+        document.querySelector(".cerrar").addEventListener("click", e => {
+            document.querySelector(".modalTarget").close()
+
+        })
+    }
+
+
+
+    agregarListenersNav()
     componentHandler.upgradeDom()  // necesario para que MDL conozca nuevos elementos agregados de plantilla
 }
-    //agregar listeners a botones
+//agregar listeners a botones
 
-function saludar(e,ele, indiceGuardado){
+function saludar(e, ele, indiceGuardado) {
     console.log(indiceGuardado)
-    
-    
-    localStorage.setItem("indiceKey", indiceGuardado); 
+
+
+    localStorage.setItem("indiceKey", indiceGuardado);
     e.preventDefault() //necesario  
-    console.log("hola ", ele )
+    console.log("hola ", ele)
     console.log("viejo hash: " + location.hash)
     let id = "comida"
     location.hash = id //nuevo hash
     console.log("nuevo hash" + location.hash)
-      
+
 }
