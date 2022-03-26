@@ -4,7 +4,7 @@
 
 let decisionId = "burgerList"
 
-window.localStorage.setItem("listaActiva", JSON.stringify(burgerList))
+window.sessionStorage.setItem("listaActiva", JSON.stringify(burgerList))
 //que recuerde boton activo
 
 async function initMenu() {
@@ -28,7 +28,7 @@ async function initMenu() {
 
     let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
-    let listaActual = JSON.parse(window.localStorage.getItem("listaActiva"))
+    let listaActual = JSON.parse(window.sessionStorage.getItem("listaActiva"))
     console.log("cartelera en puntero", listaActual)
     let html = template({ item: listaActual })
     productoContainer.innerHTML = html
@@ -54,7 +54,7 @@ async function initMenu() {
             //sets lista a tomar files de cartas
             console.log("set lista", listaProductosAMostrar)
             let listaString = JSON.stringify(listaProductosAMostrar)
-            window.localStorage.setItem("listaActiva", listaString)
+            window.sessionStorage.setItem("listaActiva", listaString)
             console.log("ele recordado", ele.id)
             decisionId = ele.id
             console.log("asignando")
@@ -211,7 +211,7 @@ function saludar(e, ele, indiceGuardado) {
     console.log(indiceGuardado)
 
 
-    localStorage.setItem("indiceKey", indiceGuardado);
+    sessionStorage.setItem("indiceKey", indiceGuardado);
     e.preventDefault() //necesario  
     console.log("hola ", ele)
     console.log("viejo hash: " + location.hash)

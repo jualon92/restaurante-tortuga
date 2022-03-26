@@ -1,7 +1,7 @@
 let listaCarrito = [
 ]
 
-
+ 
 
 async function initCarrito() {
     console.warn("carrito iniciado")
@@ -11,8 +11,8 @@ async function initCarrito() {
 
     let plantillaHbs = await fetch('templates/productos-carrito.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
-    //let listaActual  = JSON.parse(window.localStorage.getItem("listaPedidos"))
-    let html = template({ item: listaCarrito })
+     let listaActual  = JSON.parse(window.sessionStorage.getItem("listaCarro"))
+    let html = template({ item: listaActual })
     document.querySelector(".contenedor-resumen").innerHTML += html
 
 
@@ -66,12 +66,26 @@ async function initCarrito() {
 
 async function quitarEsteProducto(indice) {
     console.warn(indice)
-    listaCarrito.splice(indice, 1)
+    
+    let listaInicial = JSON.parse(window.sessionStorage.getItem("listaCarro"))
+    
+    // Quitar contadores de compras
+    let contadorCompras = window.sessionStorage.getItem("contadorCompras")
+    let cantidadBorrada = listaInicial[indice].unidades
+    contadorComprasFinal = parseInt(contadorCompras) - cantidadBorrada 
+    // Setear nuevo contador de compras totales
+    window.sessionStorage.setItem("contadorCompras", JSON.stringify(contadorComprasFinal))
 
-    //logica repetida, estaria mejor que tenga una  funcion render
+
+    // Quitarlo de la lista de compras
+    listaInicial.splice(indice, 1)
+
+    // guardar en lista de carrito
+    window.sessionStorage.setItem("listaCarro", JSON.stringify(listaInicial))
+    // RE RENDER con lista limpia
     let plantillaHbs = await fetch('templates/productos-carrito.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
-    let html = template({ item: listaCarrito })
+    let html = template({ item: listaInicial })
     document.querySelector(".contenedor-resumen").innerHTML = html
 
     //total, deberia ser funcion
@@ -84,8 +98,9 @@ async function quitarEsteProducto(indice) {
     });
     //calcular total
     document.querySelector(".carrito-total__resultado").innerHTML = acuTotal
-
-
+ 
+   
+    
 }
 
 

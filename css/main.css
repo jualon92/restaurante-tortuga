@@ -156,14 +156,14 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 8px 123px;
+  -webkit-box-shadow: 0px 4px 24px rgba(244, 76, 76, 0.45);
+          box-shadow: 0px 4px 24px rgba(244, 76, 76, 0.45);
   width: 304px;
   height: 58px;
   background: #df2424;
   border: 1px solid #000000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);
-          box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);
   border-radius: 30px;
 }
 
@@ -647,6 +647,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #ffffff;
+  font-weight: 600;
 }
 
 .productos {
@@ -869,8 +870,8 @@ body {
   border: 1px solid #000000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);
-          box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 0px 4px 24px rgba(244, 76, 76, 0.45);
+          box-shadow: 0px 4px 24px rgba(244, 76, 76, 0.45);
   border-radius: 30px;
   /*
     &:active{
@@ -882,7 +883,7 @@ body {
 .btn-carrito__texto {
   font-family: Roboto;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 550;
   font-size: 20px;
   line-height: 23px;
   display: -webkit-box;

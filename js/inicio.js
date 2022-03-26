@@ -23,8 +23,8 @@ this.addEventListener("DOMContentLoaded", precargarImagenes);
     
 
 async function initInicio() {
-   
- 
+    let listaPrueba = []
+    window.sessionStorage.setItem("listaCarro", JSON.stringify(listaPrueba))
     console.warn("initInicio")
     document.querySelector(".btnP").addEventListener('click', e => {
         console.log("clickeado")
@@ -33,7 +33,6 @@ async function initInicio() {
         let id = document.querySelector(".btnP").id // id de boton
         location.hash = id //nuevo hash
         console.log("nuevo hash" + location.hash)
-
     })
 
 

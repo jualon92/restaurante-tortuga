@@ -84,7 +84,8 @@
     background: #f64444;
     border: 1px solid #000000;
     box-sizing: border-box;
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);
+    //box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45); 
+    box-shadow: 0px 4px 24px rgba(244, 76, 76, 0.45);
     border-radius: 30px;
     /*
     &:active{
@@ -95,7 +96,7 @@
     &__texto {
         font-family: Roboto;
         font-style: normal;
-        font-weight: normal;
+        font-weight: 550;
         font-size: 20px;
         line-height: 23px;
         display: flex;

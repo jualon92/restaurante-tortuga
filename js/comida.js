@@ -1,4 +1,4 @@
-
+ 
 async function initComida() {
 
     function getContadorCompras() {
@@ -9,10 +9,10 @@ async function initComida() {
 
     let plantillaHbs = await fetch('templates/cartas.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
-    let index = JSON.parse(localStorage.getItem("indiceKey"))
+    let index = JSON.parse(sessionStorage.getItem("indiceKey"))
 
     // let html = template(burgerList[index])
-    let listaActual = JSON.parse(window.localStorage.getItem("listaActiva"))
+    let listaActual = JSON.parse(window.sessionStorage.getItem("listaActiva"))
     console.log("burger lista sele", listaActual)
     let html = template(listaActual[index])
 
@@ -52,6 +52,7 @@ async function initComida() {
 
         //agregar a lista de carrito
         //es primera vez, agregar a la lista
+       /*
         console.warn("dato", elementoATrabajar.unidades)
 
         let eleCarrito = listaCarrito.findIndex(ele => ele.nombre === elementoATrabajar.nombre)
@@ -67,11 +68,29 @@ async function initComida() {
         } else { // es la primera vez que se ingresa ese producto
             elementoATrabajar.unidades = cantidadAComprar
             listaCarrito.push(elementoATrabajar)
+        }*/
+
+        const getListaCarrito = () => JSON.parse(window.sessionStorage.getItem("listaCarro"))
+        let listaInicial = getListaCarrito() 
+        let eleCarrito = listaInicial.findIndex(ele => ele.nombre === elementoATrabajar.nombre)
+
+        if (eleCarrito >= 0) { //  ya hay una entrada en el array
+            //encontrar ese ele
+
+            let objTarget = listaInicial[eleCarrito]
+
+            objTarget.unidades += cantidadAComprar
+            window.sessionStorage.setItem("listaCarro", JSON.stringify(listaInicial))
+
+        } else { // es la primera vez que se ingresa ese producto
+            elementoATrabajar.unidades = cantidadAComprar
+            listaInicial.push(elementoATrabajar)
+            window.sessionStorage.setItem("listaCarro", JSON.stringify(listaInicial))
         }
+         
 
-
-
-
+        //window local storage
+        
 
     })
 
