@@ -771,11 +771,10 @@ body {
 }
 
 .body__carta {
-  background-color: #EADFD4;
+  background-color: #eadfd4;
 }
 
 .carta-container__fondo {
-  width: 100%;
   height: 72%;
   background: #ffffff;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -784,6 +783,28 @@ body {
   position: absolute;
   bottom: 0;
   z-index: -1;
+}
+
+@media screen and (min-width: 759px) {
+  .carta-container__fondo {
+    left: 20% !important;
+    right: 20% !important;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .carta-container__fondo {
+    left: 30% !important;
+    right: 30% !important;
+  }
+}
+
+@media (max-width: 758px) {
+  .carta-container__fondo {
+    left: 2%;
+    right: 2%;
+    bottom: 2%;
+  }
 }
 
 .foto__burger {
@@ -814,6 +835,20 @@ body {
   .burger-container {
     margin-left: 5%;
     margin-right: 5%;
+  }
+}
+
+@media screen and (min-width: 759px) {
+  .burger-container {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .burger-container {
+    margin-left: 35%;
+    margin-right: 35%;
   }
 }
 

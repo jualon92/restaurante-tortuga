@@ -1,12 +1,13 @@
-.body__carta{
-    background-color:#EADFD4 ;
+.body__carta {
+    background-color: #eadfd4;
 }
 
 .carta-container {
-   // background-color: #eadfd4;
+    // background-color: #eadfd4;
 
     &__fondo {
-        width: 100%;
+        //   width: 100%;
+
         height: 72%;
         background: #ffffff;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -15,13 +16,26 @@
         position: absolute;
         bottom: 0;
         z-index: -1;
+
+        @media screen and (min-width: 759px) {
+            left: 20% !important;
+            right: 20% !important;
+        }
+        @media screen and (min-width: 1300px) {
+            left: 30% !important;
+            right: 30% !important;
+        }
+
+        @media (max-width: 758px) {
+            left: 2%;
+            right: 2%;
+            bottom: 2%;
+        }
     }
+}
 
-
-}   
-
-.foto__burger{
-    top:10%;
+.foto__burger {
+    top: 10%;
 }
 
 .burger-container {
@@ -30,8 +44,8 @@
     margin-right: 10%;
     display: flex;
     flex-direction: column;
-  //  gap: 30px;
-  //  padding-top: 43px;
+    //  gap: 30px;
+    //  padding-top: 43px;
     height: calc(100vh - 30px);
     justify-content: space-evenly;
     @media (max-width: 340px) {
@@ -39,15 +53,24 @@
         margin-right: 5%;
     }
 
+    @media screen and (min-width: 759px) {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    @media screen and (min-width: 1300px) {
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+
     align-items: center;
 
     &__imagen {
-      //  width: 286px;
-       // height: 241px;    }
-       max-width:-webkit-fill-available;;
+        //  width: 286px;
+        // height: 241px;    }
+        max-width: -webkit-fill-available;
     }
-    &__texto{
-         
+    &__texto {
     }
     &__titulo {
         font-family: Roboto;
@@ -63,7 +86,6 @@
         text-align: center;
 
         color: #000000;
-      
     }
 
     &__resumen {
@@ -84,7 +106,7 @@
     background: #f64444;
     border: 1px solid #000000;
     box-sizing: border-box;
-    //box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45); 
+    //box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.45);
     box-shadow: 0px 4px 24px rgba(244, 76, 76, 0.45);
     border-radius: 30px;
     /*
@@ -130,8 +152,6 @@
 
         color: #000000;
     }
-
-    
 }
 
 .contador-pedidos {
