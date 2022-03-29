@@ -96,9 +96,4 @@ self.addEventListener('fetch', function (event) {
         })
     );
 });
-
-self.clients.matchAll({ includeUncontrolled: true }).then(clients => {
-    for (const client of clients) {
-        updateCache(new URL(client.url).href);
-    }
-});
+ 
