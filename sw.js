@@ -12,8 +12,30 @@ const appShellFiles = [
     "/images/burger.svg",
     "/images/mapa.svg",
     "/images/flecha-usuario.svg",
+    "/images/zanella.svg",
+ 
+    "/images/ham3.png",
+    "/images/ambur.avif",
+    "/images/towerburger.png",
+    "/images/pizza10.avif",
+    "/images/pizza15.avif",
+    "/images/hamGrande.avif",
+    "/images/burgerGigante.png",
+    "/images/pizza-grande15.avif",
+    "/images/pizza-salaminGrande.avif",
 
+
+
+    // UI
     "/images/casa.svg",
+    "/images/atras.png",
+    "/images/estrella.svg",
+    "/images/fuego.svg",
+    "/images/carrito.svg",
+    "/images/lupa.png",
+    "/images/notificacion.svg",
+
+
     "/images/corazon.svg",
     "/images/menuGrande.avif",
     "/images/standardPancho-big.avif",
