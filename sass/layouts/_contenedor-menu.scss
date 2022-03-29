@@ -1,29 +1,25 @@
- 
-body{
+body {
     background-color: whitesmoke;
 }
 
-  
 .contenedor-menu {
     //   margin-left: 9%;
     //   margin-right: 9%;
     display: flex;
     flex-direction: column;
-     gap: 30px;
+    gap: 30px;
     margin-left: 2rem;
     margin-right: 2rem;
-   // padding-top: 10px;
+    // padding-top: 10px;
     justify-content: space-between;
     //  height: 510px;
-    min-height: calc( 100vh - 20px );
+    min-height: calc(100vh - 20px);
 
-    @media (max-width: 340px)  {
+    @media (max-width: 340px) {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
-        
     }
 
-     
     @media (min-width: 360px) and (max-width: 400px) {
         margin-left: 1.4rem;
         margin-right: 1.4rem;
@@ -35,8 +31,8 @@ body{
     }
 }
 
-.contenedor-productos{
-    display:flex;
+.contenedor-productos {
+    display: flex;
     flex-wrap: wrap; //permite administrar mejor espacio
 }
 
@@ -78,9 +74,9 @@ body{
 
         */
 
-       // background: url("/images/ellipse_13.avif");
-       background: url("https://i.pravatar.cc/250");
-       
+        // background: url("/images/ellipse_13.avif");
+     // background: url("https://i.pravatar.cc/250");
+
         background-size: cover; //
         background-repeat: no-repeat;
         border-radius: 500px;
@@ -188,17 +184,16 @@ body{
         padding-left: 5%;
         padding-right: 5%;
     }
-    @media (min-width: 1399px) { 
-        align-content: space-around;;
+    @media (min-width: 1399px) {
+        align-content: space-around;
         padding-left: 5%;
         padding-right: 5%;
     }
 
-    @media (min-width: 760px) and (max-width:1000px) { 
+    @media (min-width: 760px) and (max-width: 1000px) {
         padding-right: 0;
         align-items: center;
     }
-    
 
     //  background: rgba(236, 106, 0, 0.25); //bajo contraste
     background-color: #ec6a0066; //
@@ -400,9 +395,9 @@ body{
     //  flex-direction: row;
     //  row-gap: 20px;
     // flex-wrap: wrap;
-    display:flex;
+    display: flex;
     width: 100%;
- 
+
     overflow: scroll; // con scroll a x+
     min-height: 187px;
     //  background-color: blue;
@@ -421,7 +416,7 @@ body{
     align-items: center;
     gap: 0.6rem;
     min-width: 50%;
-    
+
     &__foto {
         //   width: 160px;
         max-height: 95px;
@@ -440,7 +435,6 @@ body{
         color: #000000;
     }
 
-     
     &__pollo {
         //    width: 146px!important;
         height: 95px;

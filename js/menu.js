@@ -8,6 +8,7 @@ window.sessionStorage.setItem("listaActiva", JSON.stringify(burgerList))
 //que recuerde boton activo
 
 async function initMenu() {
+
     let productoContainer = document.querySelector(".productos")
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
     console.warn("initMenu")
@@ -35,7 +36,6 @@ async function initMenu() {
 
     //  document.querySelector(".contenedor-productos__btn-ordenar").style = window.sessionStorage.getItem("directionChoice")
     //console.log("html es : " + html )
-
 
 
 
@@ -204,6 +204,8 @@ async function initMenu() {
 
     agregarListenersNav()
     componentHandler.upgradeDom()  // necesario para que MDL conozca nuevos elementos agregados de plantilla
+
+
 }
 //agregar listeners a botones
 

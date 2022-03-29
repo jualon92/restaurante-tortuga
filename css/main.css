@@ -239,7 +239,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-height: calc( 100vh - 20px);
+  min-height: calc(100vh - 20px);
 }
 
 @media (max-width: 340px) {
@@ -319,7 +319,6 @@ body {
         height: 80px;
 
         */
-  background: url("https://i.pravatar.cc/250");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 500px;

@@ -20,9 +20,11 @@
 
 this.addEventListener("DOMContentLoaded", precargarImagenes);
 */
-    
+let imagenPerfil = null
 
 async function initInicio() {
+ 
+
     let listaPrueba = []
     window.sessionStorage.setItem("listaCarro", JSON.stringify(listaPrueba))
     console.warn("initInicio")
@@ -36,4 +38,4 @@ async function initInicio() {
     })
 
 
-}
+} 

@@ -1,5 +1,20 @@
 
+ function registrarServiceWorker() {
+    //verificar si nav es compatible con sv
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js")
+            .then(reg => {
+                console.log("El service worker se registro correctamente", reg)
+            })
+            .catch(err => {
+                console.log("error al registrar el Service Worker!", err)
+            })
+    } else {
+        console.log("No hay service worker en navigator")
+    }
 
+
+}
 
 
 class Main {
@@ -8,18 +23,14 @@ class Main {
             initInicio()
         } else if (id == "menu") {
             initMenu()
-        }else if (id == "comida") {
+        } else if (id == "comida") {
             initComida()
-        }else if (id == "carrito") {
+        } else if (id == "carrito") {
             initCarrito()
         }
 
     }
-
-
-    async start() {
-        await this.cargarPlantillas()
-    }
+ 
     getNombreArchivo(id) {
         return 'vistas/' + id + '.html'
     }
@@ -71,8 +82,14 @@ class Main {
             await this.cargarPlantilla(id) //utilizarlo para plantilla
         })
     }
+
+    async start() {
+        
+        await this.cargarPlantillas()
+    }
 }
 
 
 const main = new Main()
+registrarServiceWorker()
 main.start() //ini
