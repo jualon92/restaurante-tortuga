@@ -16,7 +16,9 @@ const appShellFiles = [
     "/images/casa.svg",
     "/images/corazon.svg",
     "/images/menuGrande.avif",
-
+    "/images/standardPancho-big.avif",
+    "/images/standardPancho-small.avif",
+    
     //HTML
     "index.html",
     "/vistas/carrito.html",
@@ -74,3 +76,7 @@ self.addEventListener('fetch', (e) => {
       return response;
     })());
   });
+
+
+  
+ 

@@ -61,6 +61,9 @@ async function initCarrito() {
 
     agregarListeners()
     componentHandler.upgradeDom()
+    if (faltaInstalar){
+        document.querySelector("#btnCart-update").classList.toggle("hidden", false)
+    } 
 }
 
 

@@ -17,6 +17,9 @@ async function initMenu() {
     let indiceActivo = 0
     var indiceGuardado = ""
 
+
+    
+
     //contenido estatica cartelera
     /*  async function getHTMLCartelera(listaProductos){
           let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
@@ -200,11 +203,36 @@ async function initMenu() {
         })*/
     }
 
-
+     //dropdown update 
+     
 
     agregarListenersNav()
     componentHandler.upgradeDom()  // necesario para que MDL conozca nuevos elementos agregados de plantilla
 
+    document.querySelector("#dropdown-update").addEventListener('click', async () => {
+        console.log('👍', 'butInstall-clicked');
+        const promptEvent = window.deferredPrompt;
+        if (!promptEvent) {
+            console.log("ya hay un sw")
+            // The deferred prompt isn't available.
+            return;
+        }
+        // Show the install prompt.
+        promptEvent.prompt();
+        // Log the result
+        const result = await promptEvent.userChoice;
+        console.log('👍', 'userChoice', result);
+        // Reset the deferred prompt variable, since
+        // prompt() can only be called once.
+        window.deferredPrompt = null;
+        // Hide the install button.
+       
+    });
+
+
+    if (faltaInstalar){
+        document.querySelector("#dropdown-update").classList.toggle("hidden", false)
+    } 
 
 }
 //agregar listeners a botones

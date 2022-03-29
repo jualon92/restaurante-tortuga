@@ -225,6 +225,26 @@ body {
   background-color: whitesmoke;
 }
 
+#btn-update {
+  position: fixed;
+  top: 3%;
+  left: 5%;
+  z-index: 1;
+  font-size: 15px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  color: white;
+  text-transform: none;
+  border-radius: 20px;
+  padding: 0 15px;
+  background-color: #DF2424;
+}
+
+#btnCart-update {
+  text-transform: inherit;
+}
+
 .contenedor-menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1194,7 +1214,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
+  gap: 13px;
   padding: 10px 0;
 }
 

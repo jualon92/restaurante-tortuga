@@ -2,6 +2,30 @@ body {
     background-color: whitesmoke;
 }
 
+#btn-update{
+    position: fixed;
+    top: 3%;
+    left: 5%;
+    z-index: 1;
+    font-size:15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+   
+    color: white;
+
+    text-transform: none;
+    border-radius: 20px;
+  
+    padding: 0 15px;
+  
+    background-color: #DF2424;
+
+}
+
+#btnCart-update{
+    text-transform: inherit;
+}
 .contenedor-menu {
     //   margin-left: 9%;
     //   margin-right: 9%;
