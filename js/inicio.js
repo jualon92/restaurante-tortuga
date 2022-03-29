@@ -23,7 +23,7 @@ this.addEventListener("DOMContentLoaded", precargarImagenes);
 let imagenPerfil = null
 let deferredPrompt;
 
-let faltaInstalar;
+let faltaInstalar = false;
 
 window.addEventListener('beforeinstallprompt', (event) => {
     // Prevent the mini-infobar from appearing on mobile.
@@ -33,11 +33,12 @@ window.addEventListener('beforeinstallprompt', (event) => {
     window.deferredPrompt = event;
     // Remove the 'hidden' class from the install button container.
     faltaInstalar = true
-     
+    document.querySelector("#btn-update").classList.toggle("hidden", false)
 });
 
 
 async function initInicio() {
+    componentHandler.upgradeDom()  
      
     document.querySelector("#btn-update").addEventListener('click', async () => {
         console.log('👍', 'butInstall-clicked');
@@ -71,12 +72,8 @@ async function initInicio() {
         console.log("nuevo hash" + location.hash)
     })
 
-
-
-    componentHandler.upgradeDom()
-    if (faltaInstalar){
-        document.querySelector("#btn-update").classList.toggle("hidden", false)
-    } 
+     
+   
 
 }
 
