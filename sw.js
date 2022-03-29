@@ -12,13 +12,13 @@ const appShellFiles = [
     "/images/burger.svg",
     "/images/mapa.svg",
     "/images/flecha-usuario.svg",
-     
+
     "/images/casa.svg",
     "/images/corazon.svg",
     "/images/menuGrande.avif",
     "/images/standardPancho-big.avif",
     "/images/standardPancho-small.avif",
-    
+
     //HTML
     "index.html",
     "/vistas/carrito.html",
@@ -28,7 +28,7 @@ const appShellFiles = [
     "/templates/cartas.hbs",
     "/templates/cartelera.hbs",
     "/templates/productos-carrito.hbs",
-    
+
     //JS
     "/js/carrito.js",
     "/js/comida.js",
@@ -39,13 +39,13 @@ const appShellFiles = [
 
     //CSS
     "/css/main.css",
-    
+
     //google iconos
     "/images/iconos/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2",
 
 ];
 
- 
+
 
 self.addEventListener('install', (e) => {
     console.log('[Service Worker] Install');
@@ -57,11 +57,21 @@ self.addEventListener('install', (e) => {
 });
 
 
-self.addEventListener("activate", e => {
-    console.log("sw activate")
-})
-
- 
+self.addEventListener('activate', (event) => {
+    console.info('Event: Activate');
+    event.waitUntil(
+        self.clients.claim(),
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cache) => {
+                    if (cache !== cacheName) {
+                        return caches.delete(cache);
+                    }
+                })
+            );
+        })
+    );
+});
 
 /*
 self.addEventListener('fetch', (e) => {
@@ -79,12 +89,16 @@ self.addEventListener('fetch', (e) => {
 
 */
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
     event.respondWith(
-      caches.match(event.request).then(function(response) {
-        return response || fetch(event.request);
-      })
+        caches.match(event.request).then(function (response) {
+            return response || fetch(event.request);
+        })
     );
-  });
-  
- 
+});
+
+self.clients.matchAll({ includeUncontrolled: true }).then(clients => {
+    for (const client of clients) {
+        updateCache(new URL(client.url).href);
+    }
+});
