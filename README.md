@@ -2,7 +2,7 @@
  Se busca app web  que sirva para hacer pedidos de comida por celular.
  - Cargar rapido:
  Se utiliza preload en primera carga. Ademas se utiliza service worker para que mediante fetch carge los archivos principales en el cache.  Esto ademas posibilita funcionamiento offline.
- Las imagenes se pasaron a formato avif. Si html detecta iphone se utiliza webpack.  
+ Las imagenes se pasaron a formato avif. Si html detecta iphone se utiliza webp  
  
  
  -  Capacidad de instalar:
