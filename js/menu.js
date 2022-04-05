@@ -2,13 +2,16 @@
 //const horizontal = "transform: rotate(180deg)"
 //const vertical = "transform: rotate(90deg);"
 
+
+
+
 let decisionId = "burgerList"
 
-window.sessionStorage.setItem("listaActiva", JSON.stringify(burgerList))
 //que recuerde boton activo
 
 async function initMenu() {
 
+    storagePreferido.setItem("listaActiva", JSON.stringify(burgerList))
     let productoContainer = document.querySelector(".productos")
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
     console.warn("initMenu")
@@ -18,7 +21,39 @@ async function initMenu() {
     var indiceGuardado = ""
 
 
-    
+    document.querySelector(".dropdown-borrarNav").addEventListener("click", (e) => {
+        storagePreferido.clear()
+        localStorage.clear()
+
+
+        // dialog("los datos de navegacion han sido eliminados")
+        setTimeout(() => {
+            location.hash = "inicio"
+
+        }, 1400);
+    })
+    //probar sin ajax
+
+    //podria usarse handlebars para que al iniciar la pagina 
+    if (!storagePreferido.getItem("usuario")) { //si usuario no existe en local storage
+        console.warn("nuevo usuario")
+        await $.ajax({
+            url: 'https://randomuser.me/api/',
+            dataType: 'json',
+            success: function (data) {
+                let imgUser = data.results[0].picture.thumbnail
+                storagePreferido.setItem("usuario", `url(${imgUser})`)
+                document.querySelector(".menu-header__foto").style.backgroundImage = `url(${imgUser})`
+            }
+        })
+    } else {
+        console.warn("user ya conocido")
+
+        document.querySelector(".menu-header__foto").style.backgroundImage = storagePreferido.getItem("usuario")
+
+    }
+
+
 
     //contenido estatica cartelera
     /*  async function getHTMLCartelera(listaProductos){
@@ -32,7 +67,7 @@ async function initMenu() {
 
     let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
-    let listaActual = JSON.parse(window.sessionStorage.getItem("listaActiva"))
+    let listaActual = JSON.parse(storagePreferido.getItem("listaActiva"))
     console.log("cartelera en puntero", listaActual)
     let html = template({ item: listaActual })
     productoContainer.innerHTML = html
@@ -57,7 +92,7 @@ async function initMenu() {
             //sets lista a tomar files de cartas
             console.log("set lista", listaProductosAMostrar)
             let listaString = JSON.stringify(listaProductosAMostrar)
-            window.sessionStorage.setItem("listaActiva", listaString)
+            storagePreferido.setItem("listaActiva", listaString)
             console.log("ele recordado", ele.id)
             decisionId = ele.id
             console.log("asignando")
@@ -92,7 +127,7 @@ async function initMenu() {
                 let indice = Array.from(document.querySelectorAll(".productos__item")).indexOf(producto)
                 console.log("DDDDDDDDDDDDDDDDDDD ", indice)
                 indiceGuardado = indice
-                localStorage.setItem("indiceKey", indiceGuardado);
+                storagePreferido.setItem("indiceKey", indiceGuardado);
             })
         }
     }
@@ -122,7 +157,7 @@ async function initMenu() {
 
     }
 
-    let contadorCompras = JSON.parse(window.sessionStorage.getItem("contadorCompras"))
+    let contadorCompras = JSON.parse(storagePreferido.getItem("contadorCompras"))
     let contadorMenu = document.querySelector(".footer-nav__contador-menu")
     if (contadorCompras > 0 && contadorCompras < 10) {
         document.querySelector(".footer-nav__carrito").src = "images/carritoRojo.svg"
@@ -203,36 +238,21 @@ async function initMenu() {
         })*/
     }
 
-     //dropdown update 
-     
+    //dropdown update 
+
 
     agregarListenersNav()
     componentHandler.upgradeDom()  // necesario para que MDL conozca nuevos elementos agregados de plantilla
 
     document.querySelector("#dropdown-update").addEventListener('click', async () => {
-        console.log('👍', 'butInstall-clicked');
-        const promptEvent = window.deferredPrompt;
-        if (!promptEvent) {
-            console.log("ya hay un sw")
-            // The deferred prompt isn't available.
-            return;
-        }
-        // Show the install prompt.
-        promptEvent.prompt();
-        // Log the result
-        const result = await promptEvent.userChoice;
-        console.log('👍', 'userChoice', result);
-        // Reset the deferred prompt variable, since
-        // prompt() can only be called once.
-        window.deferredPrompt = null;
-        // Hide the install button.
-       
+        await instalarSW()
+
     });
 
 
-    if (faltaInstalar){
+    if (faltaInstalar) {
         document.querySelector("#dropdown-update").classList.toggle("hidden", false)
-    } 
+    }
 
 }
 //agregar listeners a botones
@@ -241,7 +261,7 @@ function saludar(e, ele, indiceGuardado) {
     console.log(indiceGuardado)
 
 
-    sessionStorage.setItem("indiceKey", indiceGuardado);
+    storagePreferido.setItem("indiceKey", indiceGuardado);
     e.preventDefault() //necesario  
     console.log("hola ", ele)
     console.log("viejo hash: " + location.hash)

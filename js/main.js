@@ -1,19 +1,26 @@
+ 
 
- function registrarServiceWorker() {
-    //verificar si nav es compatible con sv
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("sw.js")
-            .then(reg => {
-                console.log("El service worker se registro correctamente", reg)
-            })
-            .catch(err => {
-                console.log("error al registrar el Service Worker!", err)
-            })
-    } else {
-        console.log("No hay service worker en navigator")
+const storagePreferido = window.localStorage
+
+
+
+async function instalarSW(){
+    console.log('👍', 'butInstall-clicked');
+    const promptEvent = window.deferredPrompt;
+    if (!promptEvent) {
+        console.log("ya hay un sw")
+        // The deferred prompt isn't available.
+        return;
     }
-
-
+    // Show the install prompt.
+    promptEvent.prompt();
+    // Log the result
+    const result = await promptEvent.userChoice;
+    console.log('👍', 'userChoice', result);
+    // Reset the deferred prompt variable, since
+    // prompt() can only be called once.
+    window.deferredPrompt = null;
+    // Hide the install button.
 }
 
 
@@ -30,7 +37,9 @@ class Main {
         }
 
     }
- 
+
+
+
     getNombreArchivo(id) {
         return 'vistas/' + id + '.html'
     }
@@ -84,12 +93,21 @@ class Main {
     }
 
     async start() {
-        
+
         await this.cargarPlantillas()
     }
 }
 
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+        .register("/sw.js")
+        .then(serviceWorker => {
+            console.log("Service Worker registered: ", serviceWorker);
+        })
+        .catch(error => {
+            console.error("Error registering the Service Worker: ", error);
+        });
+}
 
 const main = new Main()
-registrarServiceWorker()
 main.start() //ini

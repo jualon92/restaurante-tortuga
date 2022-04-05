@@ -5,13 +5,13 @@ let listaCarrito = [
 
 async function initCarrito() {
     console.warn("carrito iniciado")
-    componentHandler.upgradeDom()
+     
 
     // HANDLEBARS, CONTENIDO DINAMICO
 
     let plantillaHbs = await fetch('templates/productos-carrito.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
-     let listaActual  = JSON.parse(window.sessionStorage.getItem("listaCarro"))
+     let listaActual  = JSON.parse(storagePreferido.getItem("listaCarro"))
     let html = template({ item: listaActual })
     document.querySelector(".contenedor-resumen").innerHTML += html
 
@@ -54,8 +54,11 @@ async function initCarrito() {
             location.hash = "menu"
         })
 
+        document.querySelector("#btnCart-update").addEventListener("click", async () => {
+           await instalarSW()
 
-    }
+
+    })}
 
 
 
@@ -64,27 +67,29 @@ async function initCarrito() {
     if (faltaInstalar){
         document.querySelector("#btnCart-update").classList.toggle("hidden", false)
     } 
+
+    componentHandler.upgradeDom()
 }
 
 
 async function quitarEsteProducto(indice) {
     console.warn(indice)
     
-    let listaInicial = JSON.parse(window.sessionStorage.getItem("listaCarro"))
+    let listaInicial = JSON.parse(storagePreferido.getItem("listaCarro"))
     
     // Quitar contadores de compras
-    let contadorCompras = window.sessionStorage.getItem("contadorCompras")
+    let contadorCompras = storagePreferido.getItem("contadorCompras")
     let cantidadBorrada = listaInicial[indice].unidades
     contadorComprasFinal = parseInt(contadorCompras) - cantidadBorrada 
     // Setear nuevo contador de compras totales
-    window.sessionStorage.setItem("contadorCompras", JSON.stringify(contadorComprasFinal))
+    storagePreferido.setItem("contadorCompras", JSON.stringify(contadorComprasFinal))
 
 
     // Quitarlo de la lista de compras
     listaInicial.splice(indice, 1)
 
     // guardar en lista de carrito
-    window.sessionStorage.setItem("listaCarro", JSON.stringify(listaInicial))
+    storagePreferido.setItem("listaCarro", JSON.stringify(listaInicial))
     // RE RENDER con lista limpia
     let plantillaHbs = await fetch('templates/productos-carrito.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
@@ -111,11 +116,14 @@ async function quitarEsteProducto(indice) {
 async function borrarTodo() {
    
     listaCarrito = []
+    storagePreferido.setItem("listaCarro", "[]")
+
 
     //logica repetida, estaria mejor que tenga una  funcion render
     let plantillaHbs = await fetch('templates/productos-carrito.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
     let html = template({ item: listaCarrito })
     document.querySelector(".contenedor-resumen").innerHTML = html
-    
+     storagePreferido.setItem("contadorCompras", "0")
+
 }

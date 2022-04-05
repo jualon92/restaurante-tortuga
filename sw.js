@@ -13,7 +13,7 @@ const appShellFiles = [
     "/images/mapa.svg",
     "/images/flecha-usuario.svg",
     "/images/zanella.svg",
- 
+
     "/images/ham3.png",
     "/images/ambur.avif",
     "/images/towerburger.png",
@@ -68,6 +68,7 @@ const appShellFiles = [
 ];
 
 
+ 
 
 self.addEventListener('install', (e) => {
     console.log('[Service Worker] Install');
@@ -118,4 +119,5 @@ self.addEventListener('fetch', function (event) {
         })
     );
 });
- 
+
+  

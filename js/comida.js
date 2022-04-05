@@ -9,10 +9,10 @@ async function initComida() {
 
     let plantillaHbs = await fetch('templates/cartas.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
-    let index = JSON.parse(sessionStorage.getItem("indiceKey"))
+    let index = JSON.parse(storagePreferido.getItem("indiceKey"))
 
     // let html = template(burgerList[index])
-    let listaActual = JSON.parse(window.sessionStorage.getItem("listaActiva"))
+    let listaActual = JSON.parse(storagePreferido.getItem("listaActiva"))
     console.log("burger lista sele", listaActual)
     let html = template(listaActual[index])
 
@@ -43,9 +43,9 @@ async function initComida() {
         let cantidadAComprar = getContadorCompras()
         console.warn("cantidad a comprar " + cantidadAComprar)
 
-        let contador = JSON.parse(window.sessionStorage.getItem("contadorCompras"))
-        window.sessionStorage.setItem("contadorCompras", cantidadAComprar + contador)
-        console.warn("ACU comprados " + window.sessionStorage.getItem("contadorCompras"))
+        let contador = JSON.parse(storagePreferido.getItem("contadorCompras"))
+        storagePreferido.setItem("contadorCompras", cantidadAComprar + contador)
+        console.warn("ACU comprados " + storagePreferido.getItem("contadorCompras"))
         //  window.sessionStorage.setItem("listaPedidos", )
         location.hash = "menu"
 
@@ -70,7 +70,7 @@ async function initComida() {
             listaCarrito.push(elementoATrabajar)
         }*/
 
-        const getListaCarrito = () => JSON.parse(window.sessionStorage.getItem("listaCarro"))
+        const getListaCarrito = () => JSON.parse(storagePreferido.getItem("listaCarro"))
         let listaInicial = getListaCarrito() 
         let eleCarrito = listaInicial.findIndex(ele => ele.nombre === elementoATrabajar.nombre)
 
@@ -80,12 +80,12 @@ async function initComida() {
             let objTarget = listaInicial[eleCarrito]
 
             objTarget.unidades += cantidadAComprar
-            window.sessionStorage.setItem("listaCarro", JSON.stringify(listaInicial))
+            storagePreferido.setItem("listaCarro", JSON.stringify(listaInicial))
 
         } else { // es la primera vez que se ingresa ese producto
             elementoATrabajar.unidades = cantidadAComprar
             listaInicial.push(elementoATrabajar)
-            window.sessionStorage.setItem("listaCarro", JSON.stringify(listaInicial))
+            storagePreferido.setItem("listaCarro", JSON.stringify(listaInicial))
         }
          
 
@@ -113,7 +113,4 @@ async function initComida() {
 
 }
 
-
-function agregarProdu(ele) {
-    console.warn("elemento: ", ele)
-}
+ 

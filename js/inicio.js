@@ -1,3 +1,4 @@
+
 /*const precargarImagenes = (e) => {
     const imageArray = new Array("images/burgerGigante.png", 
     "images/hamGrande.avif", "images/pizza-grande15.avif", "images/ambur.avif",
@@ -25,6 +26,7 @@ let deferredPrompt;
 
 let faltaInstalar = false;
 
+
 window.addEventListener('beforeinstallprompt', (event) => {
     // Prevent the mini-infobar from appearing on mobile.
     //event.preventDefault();
@@ -38,30 +40,17 @@ window.addEventListener('beforeinstallprompt', (event) => {
 
 
 async function initInicio() {
-    componentHandler.upgradeDom()  
-     
+    componentHandler.upgradeDom()
+
+
+
     document.querySelector("#btn-update").addEventListener('click', async () => {
-        console.log('👍', 'butInstall-clicked');
-        const promptEvent = window.deferredPrompt;
-        if (!promptEvent) {
-            console.log("ya hay un sw")
-            // The deferred prompt isn't available.
-            return;
-        }
-        // Show the install prompt.
-        promptEvent.prompt();
-        // Log the result
-        const result = await promptEvent.userChoice;
-        console.log('👍', 'userChoice', result);
-        // Reset the deferred prompt variable, since
-        // prompt() can only be called once.
-        window.deferredPrompt = null;
-        // Hide the install button.
-       
+        await instalarSW()
+
     });
 
     let listaPrueba = []
-    window.sessionStorage.setItem("listaCarro", JSON.stringify(listaPrueba))
+    storagePreferido.setItem("listaCarro", JSON.stringify(listaPrueba))
     console.warn("initInicio")
     document.querySelector(".btnP").addEventListener('click', e => {
         console.log("clickeado")
@@ -72,10 +61,10 @@ async function initInicio() {
         console.log("nuevo hash" + location.hash)
     })
 
-     
-   
+
+
 
 }
 
- 
+
 
