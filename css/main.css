@@ -225,6 +225,10 @@ body {
   background-color: whitesmoke;
 }
 
+.contenedor-perfil {
+  margin-left: 2rem;
+}
+
 #btn-update {
   position: fixed;
   left: 0%;
