@@ -70,6 +70,9 @@ async function initInicio() {
                 success: function (data) {
                     
                     let imgUser = data.results[0].picture.thumbnail
+                    let user = data.results[0]
+                    console.warn(user)
+                    storagePreferido.setItem("user", JSON.stringify(user)) //clase? getItem usuario imagen  en vez de JSON.parse(getItem).imagen
                     storagePreferido.setItem("usuario-imagen", `url(${imgUser})`)
                     
                 }
@@ -78,7 +81,7 @@ async function initInicio() {
     }
 
      
-     obtenerImagen()  // cargar antes de llegar a menu
+     obtenerImagen()  //
 }
 
 
