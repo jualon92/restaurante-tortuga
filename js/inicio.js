@@ -23,7 +23,7 @@ this.addEventListener("DOMContentLoaded", precargarImagenes);
 */
 let imagenPerfil = null
 let deferredPrompt;
-
+let imagenUsada = ""
 let faltaInstalar = false;
 
 
@@ -61,9 +61,24 @@ async function initInicio() {
         console.log("nuevo hash" + location.hash)
     })
 
+    async function obtenerImagen(){
+        if (!storagePreferido.getItem("usuario")) { //si usuario no existe en local storage
+            console.warn("nuevo usuario")
+            await $.ajax({
+                url: 'https://randomuser.me/api/',
+                dataType: 'json',
+                success: function (data) {
+                    
+                    let imgUser = data.results[0].picture.thumbnail
+                    storagePreferido.setItem("usuario-imagen", `url(${imgUser})`)
+                    
+                }
+            })
+        }  
+    }
 
-
-
+     
+     obtenerImagen()  // cargar antes de llegar a menu
 }
 
 

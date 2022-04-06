@@ -10,7 +10,9 @@ let decisionId = "burgerList"
 //que recuerde boton activo
 
 async function initMenu() {
-
+    console.warn(document.querySelector(".menu-header__foto"))
+    document.querySelector(".menu-header__foto").style.backgroundImage = localStorage.getItem("usuario-imagen")
+    
     storagePreferido.setItem("listaActiva", JSON.stringify(burgerList))
     let productoContainer = document.querySelector(".productos")
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
@@ -34,25 +36,12 @@ async function initMenu() {
     })
     //probar sin ajax
 
-    //podria usarse handlebars para que al iniciar la pagina 
-    if (!storagePreferido.getItem("usuario")) { //si usuario no existe en local storage
-        console.warn("nuevo usuario")
-        await $.ajax({
-            url: 'https://randomuser.me/api/',
-            dataType: 'json',
-            success: function (data) {
-                let imgUser = data.results[0].picture.thumbnail
-                storagePreferido.setItem("usuario", `url(${imgUser})`)
-                document.querySelector(".menu-header__foto").style.backgroundImage = `url(${imgUser})`
-            }
-        })
-    } else {
-        console.warn("user ya conocido")
+    //podria usarse al iniciar la pagina para que no lo vea.
+     
+    //get imagen storage
+     
 
-        document.querySelector(".menu-header__foto").style.backgroundImage = storagePreferido.getItem("usuario")
-
-    }
-
+  
 
 
     //contenido estatica cartelera
@@ -72,6 +61,8 @@ async function initMenu() {
     let html = template({ item: listaActual })
     productoContainer.innerHTML = html
 
+    
+    
     //  document.querySelector(".contenedor-productos__btn-ordenar").style = window.sessionStorage.getItem("directionChoice")
     //console.log("html es : " + html )
 
