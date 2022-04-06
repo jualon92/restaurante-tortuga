@@ -61,8 +61,8 @@ async function initInicio() {
         console.log("nuevo hash" + location.hash)
     })
 
-    async function obtenerImagen(){
-        if (!storagePreferido.getItem("usuario")) { //si usuario no existe en local storage
+    async function guardarImagen(){
+        if (!storagePreferido.getItem("usuario") == null) { //si usuario no existe en local storage
             console.warn("nuevo usuario")
             await $.ajax({
                 url: 'https://randomuser.me/api/',
@@ -81,7 +81,7 @@ async function initInicio() {
     }
 
      
-     obtenerImagen()  //
+    await guardarImagen()  //
 }
 
 

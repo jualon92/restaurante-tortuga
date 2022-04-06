@@ -4,7 +4,21 @@ body {
 
 .contenedor-perfil{
     margin-left:2rem;
+    margin-right: 2rem;
+    &__titulo{
+        display:flex;
+        align-items:center;
+        gap: 60px;
+    }
+
+    
 }
+
+.img_perfil{
+    width: 70px!important;
+    height: 68px!important;
+}
+
 #btn-update{
     position: fixed;
     left: 0%;
