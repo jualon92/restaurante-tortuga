@@ -35,6 +35,10 @@ body {
     padding: 0 10px;
     background-color: #df2424e0;
 
+    @media (min-width:380px){
+        left:6%;
+    }
+
 }
 
 #btnCart-update{

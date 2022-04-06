@@ -262,6 +262,12 @@ body {
   background-color: #df2424e0;
 }
 
+@media (min-width: 380px) {
+  #btn-update {
+    left: 6%;
+  }
+}
+
 #btnCart-update {
   text-transform: inherit;
 }
