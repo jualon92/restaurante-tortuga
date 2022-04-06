@@ -62,7 +62,7 @@ async function initInicio() {
     })
 
     async function guardarImagen(){
-        if (storagePreferido.getItem("usuario") === null) { //si usuario no existe en local storage
+        if (storagePreferido.getItem("user") === null) { //si usuario no existe en local storage
             console.warn("nuevo usuario")
             await $.ajax({
                 url: 'https://randomuser.me/api/',
