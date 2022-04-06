@@ -34,6 +34,8 @@ class Main {
             initComida()
         } else if (id == "carrito") {
             initCarrito()
+        } else if (id == "perfil") {
+            initPerfil()
         }
 
     }

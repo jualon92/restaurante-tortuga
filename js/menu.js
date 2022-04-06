@@ -22,11 +22,16 @@ async function initMenu() {
     let indiceActivo = 0
     var indiceGuardado = ""
 
+    document.querySelector(".activar-perfil").addEventListener("click", (e) => {
+        location.hash = "perfil"
+    })
+
+    
 
     document.querySelector(".dropdown-borrarNav").addEventListener("click", (e) => {
         storagePreferido.clear()
         localStorage.clear()
-
+         
 
         // dialog("los datos de navegacion han sido eliminados")
         setTimeout(() => {
