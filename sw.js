@@ -1,11 +1,11 @@
 
-const CACHE_STATIC_NAME = "static-v01"
+const CACHE_STATIC_NAME = "static-v05"
 
-const CACHE_INMUTABLE_NAME = "inmutable-v01"
+const CACHE_INMUTABLE_NAME = "inmutable-v05"
 
-const CACHE_DYNAMIC_NAME = "dynamic-v01"
+const CACHE_DYNAMIC_NAME = "dynamic-v05"
 
-const CON_CACHE = false
+const CON_CACHE = true
 
 
 const appShellFiles = [
@@ -131,33 +131,37 @@ self.addEventListener("activate", e => { //deberia borrar cache que no esten en 
         ))
 })
 
-self.addEventListener("fetch", e => {
 
-    console.log("sw fetch")
+
+
+
+self.addEventListener('fetch', e => {
+    //console.warn('---> sw fetch!')
 
     if (CON_CACHE) {
-        //ver todos los pedidos 
-        let { method, url } = e.request //destructuring object
-        console.log(method, url)
+        let { url, method } = e.request  //destructuring object
+        //   console.log(e.request)
 
-        if (method == "GET" && !url.includes("mockapi.io")) {
+        if (method == 'GET' && !url.includes('mockapi.io')) {
+
             const respuesta = caches.match(e.request).then(res => {
                 if (res) {
-                    console.log("existe: el recurso existe en cache", url)
+                    console.log('EXISTE: el recurso existe en el cache', url)
                     return res
                 }
-                console.error("no existe en cache", url)
+                console.error('NO EXISTE: el recurso NO existe en el cache', url)
+
                 return fetch(e.request).then(nuevaRespuesta => {
-                    caches.open(CACHE_DYNAMIC_NAME).then(cache => { //abro dinamic cache
-                        cache.put(e.request, nuevaRespuesta) //
+                    caches.open(CACHE_DYNAMIC_NAME).then(cache => {
+                        cache.put(e.request, nuevaRespuesta)
                     })
-                    return nuevaRespuesta.clone //no deberian ser el mismo obj
+                    return nuevaRespuesta.clone()
                 })
             })
             e.respondWith(respuesta)
-        } else {
-            console.log("s")
+        }
+        else {
+            console.warn('BYPASS', method, url)
         }
     }
-
 })
