@@ -1,10 +1,10 @@
- 
+
 
 const storagePreferido = window.localStorage
 
 
 
-async function instalarSW(){
+async function instalarSW() {
     console.log('👍', 'butInstall-clicked');
     const promptEvent = window.deferredPrompt;
     if (!promptEvent) {
@@ -100,15 +100,40 @@ class Main {
     }
 }
 
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-        .register("/sw.js")
-        .then(serviceWorker => {
-            console.log("Service Worker registered: ", serviceWorker);
-        })
-        .catch(error => {
-            console.error("Error registering the Service Worker: ", error);
-        });
+//registrar Service Worker
+function registrarServiceWorker() {
+    //verificar si nav es compatible con sv
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js")
+            .then(reg => {
+
+                console.log("El service worker se registro correctamente", reg)
+
+                //automatizar utilizar nuevo sw 
+                reg.onupdatefound = () => { //ciclo de vida de sw
+                    const installingWorker = reg.installing // obj sw instalado
+                    installingWorker.onstatechange = () => {
+                        console.log("sw --> ", installingWorker.state)
+                        if (installingWorker.state == "activated") {
+                            console.error("reinicio en 2 segundos...")
+                            setTimeout(() => {
+                                console.log("ok")
+                                location.reload()
+                            }, 2000)
+                        }
+                    }
+
+
+                }
+            })
+            .catch(err => {
+                console.log("error al registrar el Service Worker!", err)
+            })
+    } else {
+        console.log("No hay service worker en navigator")
+    }
+
+
 }
 
 const main = new Main()
