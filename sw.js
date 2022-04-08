@@ -1,9 +1,9 @@
 
-const CACHE_STATIC_NAME = "static-v05"
+const CACHE_STATIC_NAME = "static-v09"
 
-const CACHE_INMUTABLE_NAME = "inmutable-v05"
+const CACHE_INMUTABLE_NAME = "inmutable-v09"
 
-const CACHE_DYNAMIC_NAME = "dynamic-v05"
+const CACHE_DYNAMIC_NAME = "dynamic-v09"
 
 const CON_CACHE = true
 
@@ -46,6 +46,14 @@ const appShellFiles = [
     "/images/menuGrande.avif",
     "/images/standardPancho-big.avif",
     "/images/standardPancho-small.avif",
+    "/images/simbolo4.png",
+    "/images/simbolo5.png",
+    "/images/reloj.svg",
+    "/images/carritoRojo.svg",
+    "/images/simbolo1.png",
+    "/images/simbolo2.png",
+
+     
 
     //HTML
     "index.html",
