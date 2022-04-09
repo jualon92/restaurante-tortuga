@@ -64,7 +64,8 @@ const appShellFiles = [
     "/templates/cartas.hbs",
     "/templates/cartelera.hbs",
     "/templates/productos-carrito.hbs",
-
+    "/vistas/perfil.hbs",
+    "/vistas/perfil.html",
     //JS
     "/js/carrito.js",
     "/js/comida.js",
@@ -72,7 +73,8 @@ const appShellFiles = [
     "/js/main.js",
     "/js/menu.js",
     "/js/productos.js",
-
+    "/js/perfil.js",
+    
     //CSS
     "/css/main.css",
 
