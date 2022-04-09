@@ -1,9 +1,9 @@
 
-const CACHE_STATIC_NAME = "static-v09"
+const CACHE_STATIC_NAME = "static-v12"
 
-const CACHE_INMUTABLE_NAME = "inmutable-v09"
+const CACHE_INMUTABLE_NAME = "inmutable-v12"
 
-const CACHE_DYNAMIC_NAME = "dynamic-v09"
+const CACHE_DYNAMIC_NAME = "dynamic-v12"
 
 const CON_CACHE = true
 

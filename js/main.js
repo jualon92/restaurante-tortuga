@@ -100,41 +100,38 @@ class Main {
     }
 }
 
-//registrar Service Worker
+
 function registrarServiceWorker() {
-    //verificar si nav es compatible con sv
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("sw.js")
-            .then(reg =>  {
+    if ('serviceWorker' in navigator) {
+        //estÃ³ de debe ejecutar cunado toda el documento web estÃ© cargado
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => {
+                console.log('El service worker se registrÃ³ correctamente',reg)
 
-                console.log("El service worker se registro correctamente", reg)
-
-                //automatizar utilizar nuevo sw 
-                reg.onupdatefound = () => { //ciclo de vida de sw
-                    const installingWorker = reg.installing // obj sw instalado
+                reg.onupdatefound = () => {
+                    const installingWorker = reg.installing
                     installingWorker.onstatechange = () => {
-                        console.log("sw --> ", installingWorker.state)
-                        if (installingWorker.state == "activated") {
-                            console.error("reinicio en 2 segundos...")
+                        console.log('SW --> ', installingWorker.state)
+                        if(installingWorker.state == 'activated') {
+                            console.error('Reinicio en 2 segundos ...')
                             setTimeout(() => {
-                                console.log("ok")
+                                console.log('Ok')
                                 location.reload()
-                            }, 2000)
+                            },2000)
                         }
                     }
-
-
                 }
+
             })
             .catch(err => {
-                console.log("error al registrar el Service Worker!", err)
+                console.error('Error al registrar el service worker', err)
             })
-    } else {
-        console.log("No hay service worker en navigator")
     }
+    else {
+        console.error('serviceWorker no estÃ¡ disponible en navigator')
+    }
+} 
 
-
-}
-
+registrarServiceWorker()
 const main = new Main()
 main.start() //ini

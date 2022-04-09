@@ -81,7 +81,7 @@ async function initInicio() {
     }
 
      
-    await guardarImagen()  //
+     guardarImagen()  //
 }
 
 
