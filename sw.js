@@ -64,7 +64,7 @@ const appShellFiles = [
     "/templates/cartas.hbs",
     "/templates/cartelera.hbs",
     "/templates/productos-carrito.hbs",
-    "/vistas/perfil.hbs",
+    "/templates/perfil.hbs",
     "/vistas/perfil.html",
     //JS
     "/js/carrito.js",
