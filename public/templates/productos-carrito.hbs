@@ -1,0 +1,64 @@
+{{#each item}}
+<div class="carrito-cartas">
+    <div>
+        <button onclick='quitarEsteProducto({{@index}})'
+            class=" carrito-cartas__remove mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored  mdl-button--mini-fab">
+            <i class=" material-icons">remove_shopping_cart</i>
+        </button>
+    </div>
+    <div class="carrito-cartas__img boton__img">
+        <img src={{imagen}} width="80px" alt="">
+    </div>
+    <div class="carrito-cartas__item">
+
+        <div class="carrito-cartas__titulo">{{nombre}}</div>
+
+        <div class="carrito-cartas__unidades">Unidades <span class="unidad"> {{unidades}} </span></div>
+
+    </div>
+
+    <div class="carrito-cartas__precio"> <span class="material-icons">
+            attach_money
+        </span>
+        <div class="carrito-cartas__numero-precio">{{precio}}</div>
+    </div>
+</div>
+{{/each}}
+
+
+<div class="carrito-interfaz">
+    <div class="carrito-total">
+
+        Total:
+        <div class="carrito-total__numero">
+
+            <span class="material-icons carrito-total__simbolo">
+                attach_money
+            </span>
+            <div class="carrito-total__resultado">0</div>
+        </div>
+    </div>
+    <div class="btn-comprarCarrito">
+        <button id="checkout-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Comprar <span class="material-icons">
+                shopping_cart_checkout
+            </span>
+        </button>
+        <button onclick="borrarTodo()"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Borrar Todo
+        </button>
+    </div>
+    <div class="p4">
+        <!-- Accent-colored raised button with ripple -->
+        <button id="btnCart-update" class=" hidden mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+             <span>Instala la app para no consumir datos</span> 
+        </button>
+    </div>
+</div>
+
+</div>
+
+<div id="button-checkout">
+
+</div>
