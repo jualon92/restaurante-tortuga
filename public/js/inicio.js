@@ -26,7 +26,7 @@ let deferredPrompt;
 let imagenUsada = ""
 let faltaInstalar = false;
 
-
+/*
 window.addEventListener('beforeinstallprompt', (event) => {
     // Prevent the mini-infobar from appearing on mobile.
     //event.preventDefault();
@@ -37,7 +37,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
     faltaInstalar = true
     document.querySelector("#btn-update").classList.toggle("hidden", false)
 });
-
+*/
 
 async function initInicio() {
     componentHandler.upgradeDom()
