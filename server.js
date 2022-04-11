@@ -11,6 +11,7 @@ import { dirname } from 'path';
 import fetch from "node-fetch"
 
 
+const PORT = config.PORT 
 
 mercadopago.configure({
     access_token: "APP_USR-415255069673949-013103-53933e062c46695b33189542f57470bc-92731233",
@@ -36,7 +37,7 @@ app.use("/items", routerItem)
 
 let listaDB  //deberia ser por import
 const fetchItems = async () => { //preguntar a mongo los pares nombre precio para 
-    listaDB = await fetch('http://localhost:9000/items').then(r => r.json())
+    listaDB = await fetch(`http://localhost:${PORT}/items`).then(r => r.json())
 
 }
 
@@ -125,8 +126,7 @@ app.get('/feedback', function(req, res) {
 
 
 
-// config
-const PORT = config.PORT  // config toma de package.json
+// config 
 const server = app.listen(PORT, () => console.log(`Servidor express escuchando en el puerto ${PORT}`))
 server.on('error', error => console.log(`Error en servidor express: ${error.message}`))
 
