@@ -8,13 +8,13 @@ class mongo_db {
     static async conectarDB() {
 
         try {
-            if (!Mongo_DB.conexionOk) { //no conectar dos veces
+            if (!mongo_db.conexionOk) { //no conectar dos veces
                 await mongoose.connect(config.STR_CNX, {
                     useNewUrlParser: true,
                     useUnifiedTopology: true
                 })
                 console.log('Base de datos conectada!')
-                Mongo_DB.conexionOk = true
+                mongo_db.conexionOk = true
             }
 
         }
