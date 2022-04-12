@@ -29,6 +29,7 @@ Se opto por localStorage. Para poder testear o reiniciar el storage ya que no ex
 
 # Conceptos aplicados
 - Single Page Application, vanilla JS  
+- NodeJS, express, MVC, api mercadopago, consultar que tan fiables son los datos a base de datos, Heroku CLI.
 - prototipado Figma / Mobile first approach /  BEM, SASS, 7 in 1, mixins/herencia
 - handlebars para template de cartas de alimentos 
 - Material Design Lite para  algunos iconos/botones, y dropdown
