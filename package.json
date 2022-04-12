@@ -9,8 +9,7 @@
     "watch": "nodemon server.js",
     "start": "node server.js",
     "prod": "set NODE_ENV=production&node server.js"
-
-   },
+  },
   "engines": {
     "node": "16.13.2"
   },
@@ -28,5 +27,14 @@
     "node-fetch": "^3.2.3",
     "nodemon": "^2.0.15",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jualon92/restaurante-tortuga.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jualon92/restaurante-tortuga/issues"
+  },
+  "homepage": "https://github.com/jualon92/restaurante-tortuga#readme"
 }

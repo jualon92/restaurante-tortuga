@@ -2,7 +2,7 @@ import express from 'express'
 import cors from "cors"
 import compression from "compression"
 import config from "./config.js"
-import Mongo_DB from "./model/DB_mongo.js"
+import mongo_DB from "./model/db_mongo.js"
 import routerItem from "./router/api/item.js"
 import mercadopago from "mercadopago"
 import { fileURLToPath } from 'url';
@@ -11,7 +11,7 @@ import { dirname } from 'path';
 import fetch from "node-fetch"
 
 
-const PORT = config.PORT 
+const PORT = config.PORT
 
 mercadopago.configure({
     access_token: "APP_USR-415255069673949-013103-53933e062c46695b33189542f57470bc-92731233",
@@ -22,7 +22,7 @@ mercadopago.configure({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-Mongo_DB.conectarDB() //conexion base de datos + feedback
+mongo_DB.conectarDB() //conexion base de datos + feedback
 
 const app = express()
 
@@ -35,17 +35,16 @@ app.use(express.json())
 app.use("/items", routerItem)
 
 
-let listaDB  //deberia ser por import
 const fetchItems = async () => { //preguntar a mongo los pares nombre precio para 
-    listaDB = await fetch(`http://localhost:${PORT}/items`).then(r => r.json())
-
+    listaDB = await fetch(`http://localhost:9000/items`).then(r => r.json())
 }
 
-fetchItems()
-
+ 
 
 app.post("/create_preference", async (req, res) => {
-
+    
+    listaDB = await fetchItems()
+     
 
     let arrReq = Array.from(req.body)
     let arrLocales = []
@@ -105,7 +104,7 @@ app.post("/create_preference", async (req, res) => {
                 }).catch(function (error) {
                     console.log(error);
                 });
-          
+
         } else {
             console.log("existe un item que no concuerda con la DB")
         }
@@ -114,12 +113,12 @@ app.post("/create_preference", async (req, res) => {
     }
 });
 
-app.get('/feedback', function(req, res) {
-	let info = {
-		Payment: req.query.payment_id,
-		Status: req.query.status,
-		MerchantOrder: req.query.merchant_order_id
-	};
+app.get('/feedback', function (req, res) {
+    let info = {
+        Payment: req.query.payment_id,
+        Status: req.query.status,
+        MerchantOrder: req.query.merchant_order_id
+    };
     console.log(info)
     res.redirect("/#carrito")
 });
