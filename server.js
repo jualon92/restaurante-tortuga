@@ -35,15 +35,15 @@ app.use("/items", routerItem)
  
 
 const fetchItems = async () => { //preguntar a mongo los pares nombre precio para 
-    listaDB = await fetch(`/items`).then(r => r.json())
+    listaDB = await fetch(`localhost:9000/items`).then(r => r.json())
 }
 
 
 
 app.post("/create_preference", async (req, res) => {
     console.log("prueba")
-    listaDB = await fetchItems()
-
+    //listaDB = await fetchItems()
+    /*
     console.log(listaDB)
     let arrReq = Array.from(req.body)
     let arrLocales = []
@@ -109,7 +109,7 @@ app.post("/create_preference", async (req, res) => {
         }
     } catch {
         console.log(error)
-    }
+    }*/
 });
 
 app.get('/feedback', function (req, res) {
