@@ -35,7 +35,7 @@ app.use("/items", routerItem)
 let listaDB 
 
 const fetchItems = async () => { //preguntar a mongo los pares nombre precio para 
-     listaDB = await fetch(`https://immense-escarpment-36007.herokuapp.com/items`).then(r => r.json())
+     listaDB = await fetch(`https://resto-tortuga.herokuapp.com/items`).then(r => r.json())
 }
 
 
