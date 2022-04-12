@@ -11,7 +11,7 @@
     "prod": "set NODE_ENV=production&node server.js"
   },
   "engines": {
-    "node": "16.13.2"
+    "node": "16.13.x"
   },
   "keywords": [],
   "author": "DS",
