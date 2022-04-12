@@ -35,16 +35,17 @@ app.use(express.json())
 app.use("/items", routerItem)
 
 
+
 const fetchItems = async () => { //preguntar a mongo los pares nombre precio para 
     listaDB = await fetch(`http://localhost:9000/items`).then(r => r.json())
 }
 
- 
+
 
 app.post("/create_preference", async (req, res) => {
-    
+
     listaDB = await fetchItems()
-     
+
 
     let arrReq = Array.from(req.body)
     let arrLocales = []
@@ -128,7 +129,5 @@ app.get('/feedback', function (req, res) {
 // config 
 const server = app.listen(PORT, () => console.log(`Servidor express escuchando en el puerto ${PORT}`))
 server.on('error', error => console.log(`Error en servidor express: ${error.message}`))
-
-
 
 
