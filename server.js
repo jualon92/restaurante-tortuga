@@ -1,17 +1,12 @@
 import express from 'express'
 import cors from "cors"
 import compression from "compression"
- 
- 
- 
 import mercadopago from "mercadopago"
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-
 import fetch from "node-fetch"
 import Mongo_db from "./model/db_Mongo.js"
 import config from "./config.js"
-
 import routerItem from "./router/item.js"
 
 const PORT = config.PORT
@@ -25,11 +20,11 @@ mercadopago.configure({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-//mongo_db.conectarDB() //conexion base de datos + feedback
+Mongo_db.conectarDB() //conexion base de datos + feedback
 
 const app = express()
 
-//app.use(cors())
+app.use(cors())
 app.use(compression());
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
@@ -46,12 +41,49 @@ const fetchItems = async () => { //preguntar a mongo los pares nombre precio par
 
 
 app.post("/create_preference", async (req, res) => {
-/*
+
     listaDB = await fetchItems()
 
- 
-    
-        if (true) {
+
+    let arrReq = Array.from(req.body)
+    let arrLocales = []
+
+    //setear array preferencias
+    for (let i = 0; i < arrReq.length; i++) { // setea preferencia de cada item
+        let producto = {
+            title: req.body[i].description,
+            unit_price: Number(req.body[i].price),
+            quantity: Number(req.body[i].quantity),
+        }
+        arrLocales.push(producto)
+    }
+
+
+
+    //listas para comparar
+    let arrLocalComparable = arrLocales.map(prod => JSON.stringify(({ title: prod.title, unit_price: prod.unit_price })))
+    let arrDBComparable = listaDB.map(prod => JSON.stringify(({ title: prod.name, unit_price: prod.price })))
+
+    console.log("lista local: ", arrLocalComparable)
+    console.log("lista db ", arrDBComparable)
+
+    let listaCoincidencias = []
+
+    function verificar() {
+
+        arrLocalComparable.forEach(localSTR => { //por cada item en la lista
+            let estaEnDB = arrDBComparable.includes(localSTR)
+            listaCoincidencias.push(estaEnDB)
+        });
+    }
+
+    const coincidenTodasEnDB = () => listaCoincidencias.every(ele => ele == true)
+
+
+    verificar()
+    console.log(listaCoincidencias)
+    try {
+        if (coincidenTodasEnDB()) {
             console.log(arrLocales)
             let preference = {
                 items: arrLocales,
@@ -74,8 +106,10 @@ app.post("/create_preference", async (req, res) => {
 
         } else {
             console.log("existe un item que no concuerda con la DB")
-        }*/
-     
+        }
+    } catch {
+        console.log(error)
+    }
 });
 
 app.get('/feedback', function (req, res) {
