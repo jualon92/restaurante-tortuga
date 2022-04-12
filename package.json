@@ -22,13 +22,13 @@
     "dotenv": "^16.0.0",
     "env": "^0.0.2",
     "express": "^4.17.3",
+    "install": "^0.13.0",
     "mercadopago": "^1.5.12",
     "mongoose": "^6.2.10",
     "node-fetch": "^3.2.3",
     "nodemon": "^2.0.15",
     "path": "^0.12.7"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jualon92/restaurante-tortuga.git"
