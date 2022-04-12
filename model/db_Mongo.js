@@ -9,7 +9,7 @@ class mongo_db {
  
         try {
             if (!mongo_db.conexionOk) { //no conectar dos veces
-                await mongoose.connect( process.env.ATLAS_URI, {
+                await mongoose.connect( process.env.ATLAS_URI.toString(), {
                     useNewUrlParser: true,
                     useUnifiedTopology: true
                 })
