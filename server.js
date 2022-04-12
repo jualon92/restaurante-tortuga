@@ -32,17 +32,17 @@ app.use(express.json())
 
 app.use("/items", routerItem)
 
- 
+let listaDB 
 
 const fetchItems = async () => { //preguntar a mongo los pares nombre precio para 
-    await fetch(`http://immense-escarpment-36007.herokuapp.com/items`).then(r => r.json())
+    let listaDB = await fetch(`http://immense-escarpment-36007.herokuapp.com/items`).then(r => r.json())
 }
 
 
 
 app.post("/create_preference", async (req, res) => {
     
-     let listaDB = await fetchItems()
+     await fetchItems()
      console.log("prueba")
      console.log(listaDB)
     /*
