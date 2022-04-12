@@ -6,10 +6,10 @@ class mongo_db {
     static conexionOk = false
 
     static async conectarDB() {
-
+ 
         try {
             if (!mongo_db.conexionOk) { //no conectar dos veces
-                await mongoose.connect( process.env.CNX , {
+                await mongoose.connect( process.env.ATLAS_URI, {
                     useNewUrlParser: true,
                     useUnifiedTopology: true
                 })
