@@ -2,7 +2,7 @@ import express from 'express'
 import cors from "cors"
 import compression from "compression"
 import config from "./config.js"
-import Mongo_DB from "./model/DB_mongo.js"
+//import Mongo_DB from "./model/DB_mongo.js"
 import routerItem from "./router/api/item.js"
 import mercadopago from "mercadopago"
 import { fileURLToPath } from 'url';
@@ -22,7 +22,7 @@ mercadopago.configure({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-Mongo_DB.conectarDB() //conexion base de datos + feedback
+//Mongo_DB.conectarDB() //conexion base de datos + feedback
 
 const app = express()
 
