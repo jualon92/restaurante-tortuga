@@ -4,7 +4,7 @@ const storagePreferido = window.localStorage
 
 
 
-async function instalarSW() {
+async function  SW() {
     console.log('👍', 'butInstall-clicked');
     const promptEvent = window.deferredPrompt;
     if (!promptEvent) {
