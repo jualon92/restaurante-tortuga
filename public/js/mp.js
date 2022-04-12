@@ -64,8 +64,8 @@ function agregarMPCheckout() {
         })
         .then(function (preference) {
             createCheckoutButton(preference.id);
-
-            $(".shopping-cart").fadeOut(500);
+             
+            $(".btn-comprarCarrito").fadeOut(500);
             setTimeout(() => {
                 $(".container_payment").show(500).fadeIn();
             }, 500);
@@ -73,7 +73,7 @@ function agregarMPCheckout() {
         .catch(function () {
             alert("Unexpected error");
             $('#checkout-btn').attr("disabled", false);
-        });
+        }); 
     ;
 
     // Create preference when click on checkout button
@@ -85,7 +85,7 @@ function agregarMPCheckout() {
             },
             render: {
                 container: '#button-checkout', // Class name where the payment button will be displayed
-                label: 'Pay', // Change the payment button text (optional)
+                label: 'Pagar', // Change the payment button text (optional)
             }
         });
     }

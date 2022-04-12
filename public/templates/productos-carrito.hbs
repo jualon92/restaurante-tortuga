@@ -1,4 +1,5 @@
 {{#each item}}
+
 <div class="carrito-cartas">
     <div>
         <button onclick='quitarEsteProducto({{@index}})'
@@ -38,8 +39,15 @@
             <div class="carrito-total__resultado">0</div>
         </div>
     </div>
+
+    <div class="container_payment">
+        <div id="button-checkout">
+
+        </div>
+    </div>
     <div class="btn-comprarCarrito">
-        <button id="checkout-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <button id="checkout-btn"
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
             Comprar <span class="material-icons">
                 shopping_cart_checkout
             </span>
@@ -51,14 +59,11 @@
     </div>
     <div class="p4">
         <!-- Accent-colored raised button with ripple -->
-        <button id="btnCart-update" class=" hidden mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-             <span>Instala la app para no consumir datos</span> 
+        <button id="btnCart-update"
+            class=" hidden mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            <span>Instala la app para no consumir datos</span>
         </button>
     </div>
 </div>
-
-</div>
-
-<div id="button-checkout">
 
 </div>
