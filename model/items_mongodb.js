@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import Mongo_DB from './DB_mongo.js'
+import mongo_db from './DB_mongo.js'
 
 const itemSchema = mongoose.Schema({ //declaro schema de docu
     nombre: String,
@@ -7,7 +7,7 @@ const itemSchema = mongoose.Schema({ //declaro schema de docu
 })
 
 //modelo de docu almacenado en coleccion
-const ItemsModel = mongoose.model("items", itemSchema)
+const itemsModel = mongoose.model("items", itemSchema)
 
 
 class ItemModelMongoDB { //CRUD
@@ -30,4 +30,4 @@ class ItemModelMongoDB { //CRUD
 }
 
 
-export default ItemsModel 
+export default itemsModel 
