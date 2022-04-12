@@ -1,7 +1,7 @@
-import dotenv from  "dotenv/config"
+import dotenv from  "dotenv"
 
 // no necesario si se exporta dotenv/config 
-//dotenv.config() 
+dotenv.config() 
 console.log("process.env.PORT" , process.env.PORT)  
 console.log("process.env.CNX" , process.env.CNX)
 
