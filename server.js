@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 import fetch from "node-fetch"
-import mongo_db from "./db_mongo"
+import mongo_db from "./dbmongo.js"
 
 const PORT = config.PORT
 
