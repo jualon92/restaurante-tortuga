@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from "cors"
 import compression from "compression"
-import config from "./config.js"
+ 
  
 //import routerItem from "./router/api/item.js"
 import mercadopago from "mercadopago"
@@ -10,7 +10,7 @@ import { dirname } from 'path';
 
 import fetch from "node-fetch"
 import mongo_db from "./dbmongo.js"
-
+import config from "./config.js"
 const PORT = config.PORT
 
 mercadopago.configure({
