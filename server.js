@@ -2,14 +2,14 @@ import express from 'express'
 import cors from "cors"
 import compression from "compression"
 import config from "./config.js"
-import mongo_db from "./db_mongo.js"
+ 
 //import routerItem from "./router/api/item.js"
 import mercadopago from "mercadopago"
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 import fetch from "node-fetch"
-
+import mongo_db from "./db_mongo"
 
 const PORT = config.PORT
 
