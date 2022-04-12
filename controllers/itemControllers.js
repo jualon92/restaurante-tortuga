@@ -1,4 +1,4 @@
-import Item from "../model/items_mongoDB.js"
+import item from "../model/items_mongoDB.js"
 import express from "express"
  
 
@@ -6,7 +6,7 @@ const router = express.Router()
  
 
 const getItems = (req,res) => {
-    Item.find() //all
+    item.find() //all
         .then(allUsers => res.json(allUsers))
         .catch(err => res.status(400).json("error" + err))
     
