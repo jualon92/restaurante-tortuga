@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import config from '../config.js'
 
  
-class Mongo_DB {
+class mongo_db {
     static conexionOk = false
 
     static async conectarDB() {
@@ -24,4 +24,4 @@ class Mongo_DB {
     }
 }
 
-export default Mongo_DB
+export default mongo_db
