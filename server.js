@@ -88,9 +88,9 @@ app.post("/create_preference", async (req, res) => {
             let preference = {
                 items: arrLocales,
                 back_urls: {
-                    "success": "http://localhost:9000/feedback",
-                    "failure": "http://localhost:9000/feedback",
-                    "pending": "http://localhost:9000/feedback"
+                    "success": "https://resto-tortuga.herokuapp.com/feedback",
+                    "failure": "https://resto-tortuga.herokuapp.com/feedback",
+                    "pending": "https://resto-tortuga.herokuapp.com/feedback"
                 },
                 auto_return: "approved",
             };
