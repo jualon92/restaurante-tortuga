@@ -3,7 +3,7 @@ import cors from "cors"
 import compression from "compression"
  
  
-//import routerItem from "./router/api/item.js"
+import routerItem from "./router/api/item.js"
 import mercadopago from "mercadopago"
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
