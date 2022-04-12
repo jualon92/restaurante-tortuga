@@ -43,7 +43,7 @@ const fetchItems = async () => { //preguntar a mongo los pares nombre precio par
 
 
 app.post("/create_preference", async (req, res) => {
-
+/*
     listaDB = await fetchItems()
 
  
@@ -71,7 +71,7 @@ app.post("/create_preference", async (req, res) => {
 
         } else {
             console.log("existe un item que no concuerda con la DB")
-        }
+        }*/
      
 });
 
