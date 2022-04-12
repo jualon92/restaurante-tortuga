@@ -1,4 +1,4 @@
-import Item from "../model/items_mongoDB.js"
+/*import Item from "../model/items_mongoDB.js"
 import express from "express"
  
 
@@ -18,6 +18,6 @@ router.route("/delete/:id").delete()
 
 router.route("/update/:id").put()
 
-export default { getItems }
+export default { getItems } */
 
 
