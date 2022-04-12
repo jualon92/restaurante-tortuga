@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import mongo_db from './DB_mongo.js'
+import mongo_db from './db_mongo.js'
 
 const itemSchema = mongoose.Schema({ //declaro schema de docu
     nombre: String,
