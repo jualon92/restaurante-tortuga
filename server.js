@@ -35,7 +35,7 @@ app.use("/items", routerItem)
  
 
 const fetchItems = async () => { //preguntar a mongo los pares nombre precio para 
-    listaDB = await fetch(`http://localhost:9000/items`).then(r => r.json())
+    listaDB = await fetch(`/items`).then(r => r.json())
 }
 
 
