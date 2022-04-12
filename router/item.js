@@ -5,7 +5,7 @@ const router = express.Router()
 
  
 router.route("/")
-    .get(ItemController.getItems)
+    .get(ItemController.getitems)
 
 
 export default router
