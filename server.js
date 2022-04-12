@@ -12,7 +12,8 @@ import fetch from "node-fetch"
 import Mongo_db from "./model/db_Mongo.js"
 import config from "./config.js"
 
-//import routerItem from "./router/item.js"
+import routerItem from "./router/item.js"
+
 const PORT = config.PORT
 
 mercadopago.configure({
@@ -34,7 +35,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-//app.use("/items", routerItem)
+app.use("/items", routerItem)
 
 
 
