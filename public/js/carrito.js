@@ -69,11 +69,13 @@ async function initCarrito() {
         document.querySelector("#btnCart-update").classList.toggle("hidden", false)
     } 
 
-   
+    
     document.querySelector("#checkout-btn").addEventListener("click", (e) =>{
         e.preventDefault()
+
         agregarMPCheckout()})
-       
+        
+        
     
   
 }

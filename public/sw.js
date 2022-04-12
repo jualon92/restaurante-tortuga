@@ -1,4 +1,4 @@
-const NVERSION = 43
+const NVERSION = 60
 
 
 const CACHE_STATIC_NAME = `static-v${NVERSION}`
@@ -7,7 +7,7 @@ const CACHE_INMUTABLE_NAME = `inmutable-${NVERSION}`
 
 const CACHE_DYNAMIC_NAME = `dynamic-v${NVERSION}`
 
-const CON_CACHE = true
+const CON_CACHE = false
 
 
 const appShellFiles = [

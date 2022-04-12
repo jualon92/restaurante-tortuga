@@ -50,7 +50,7 @@ function agregarMPCheckout() {
         price: 33
     };*/
 
-
+ 
 
     fetch("/create_preference", {
         method: "POST",
@@ -64,33 +64,29 @@ function agregarMPCheckout() {
         })
         .then(function (preference) {
             createCheckoutButton(preference.id);
-             
-            $(".btn-comprarCarrito").fadeOut(500);
-            setTimeout(() => {
-                $(".container_payment").show(500).fadeIn();
-            }, 500);
-        })
-        .catch(function () {
-            alert("Unexpected error");
-            $('#checkout-btn').attr("disabled", false);
-        }); 
-    ;
+           
+        }) 
+         
+        
+
+ 
 
     // Create preference when click on checkout button
     function createCheckoutButton(preferenceId) {
         // Initialize the checkout
-        mercadopago.checkout({
+        const  p = mercadopago.checkout({
             preference: {
                 id: preferenceId
             },
+            autoOpen: true, /*,
             render: {
                 container: '#button-checkout', // Class name where the payment button will be displayed
                 label: 'Pagar', // Change the payment button text (optional)
-            }
+            }*/
         });
+        
     }
-
-
+ 
     
 
 }
