@@ -23,7 +23,7 @@ mercadopago.configure({
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-//Mongo_DB.conectarDB() //conexion base de datos + feedback
+mongo_db.conectarDB() //conexion base de datos + feedback
 
 const app = express()
 
