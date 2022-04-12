@@ -1,12 +1,12 @@
-import item from "../model/items_mongoDB.js"
 import express from "express"
+import itema from "../model/items_mongodb.js"
  
 
 const router = express.Router()
  
 
 const getItems = (req,res) => {
-    item.find() //all
+    itema.find() //all
         .then(allUsers => res.json(allUsers))
         .catch(err => res.status(400).json("error" + err))
     
