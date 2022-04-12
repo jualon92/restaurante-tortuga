@@ -18,6 +18,6 @@ router.route("/delete/:id").delete()
 
 router.route("/update/:id").put()
 
-export default { getItems } */
+export default { getItems } 
 
 

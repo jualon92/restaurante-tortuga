@@ -3,7 +3,7 @@ import cors from "cors"
 import compression from "compression"
 import config from "./config.js"
 //import Mongo_DB from "./model/DB_mongo.js"
-//import routerItem from "./router/api/item.js"
+import routerItem from "./router/api/item.js"
 import mercadopago from "mercadopago"
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -32,7 +32,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-//app.use("/items", routerItem)
+app.use("/items", routerItem)
 
 
 
