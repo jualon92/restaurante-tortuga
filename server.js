@@ -12,7 +12,7 @@ import fetch from "node-fetch"
 import Mongo_db from "./model/db_Mongo.js"
 import config from "./config.js"
 
-import routerItem from "./router/item.js"
+//import routerItem from "./router/item.js"
 const PORT = config.PORT
 
 mercadopago.configure({
