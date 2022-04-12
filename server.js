@@ -42,10 +42,8 @@ const fetchItems = async () => { //preguntar a mongo los pares nombre precio par
 
 app.post("/create_preference", async (req, res) => {
     
-     await fetchItems()
-     console.log("prueba")
-     console.log(listaDB)
-    /*
+    await fetchItems()
+   
     console.log(listaDB)
     let arrReq = Array.from(req.body)
     let arrLocales = []
@@ -111,7 +109,7 @@ app.post("/create_preference", async (req, res) => {
         }
     } catch {
         console.log(error)
-    }*/
+    } 
 });
 
 app.get('/feedback', function (req, res) {
