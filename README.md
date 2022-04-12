@@ -6,11 +6,12 @@
  Se busca app web  que sirva para hacer pedidos de comida por celular.
  
  
+ 
  -  Que utilice mercadopago. Sample de api de  mercadopago https://github.com/mercadopago/checkout-payment-sample 
  
  Problemas: el precio es tomado mediante innerHTML. Con cambiar el html puede hacerse un pedido de por ej : un guiso de gran magnitud por 5 pesos.
 
-Approach: se guardan pares nombre-precio en mongoDB. Se pregunta si existe un par nombre-precio en mongoDB que coincida con el nombre y precio del preducto en carrito local(req.body)
+Approach: se guardan pares nombre-precio en mongoDB.  Se verifica que exista un par nombre-precio en mongoDB que coincida con el nombre y precio del preducto en carrito local(req.body) para continuar con compra
  
  - Cargar rapido:
  Se utiliza preload en primera carga. Ademas se utiliza service worker para que mediante fetch carge los archivos principales en el cache.  Esto ademas posibilita funcionamiento offline.
