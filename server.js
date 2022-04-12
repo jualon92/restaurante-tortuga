@@ -9,8 +9,9 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 import fetch from "node-fetch"
-import mongo_db from "./dbmongo.js"
+import mongo_db from "./model/dbmongo.js"
 import config from "./config.js"
+
 const PORT = config.PORT
 
 mercadopago.configure({
