@@ -26,13 +26,13 @@ Mongo_DB.conectarDB() //conexion base de datos + feedback
 
 const app = express()
 
-app.use(cors())
+//app.use(cors())
 app.use(compression());
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use("/items", routerItem)
+//app.use("/items", routerItem)
 
 
 
