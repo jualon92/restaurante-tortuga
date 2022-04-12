@@ -9,7 +9,7 @@ class mongo_db {
 
         try {
             if (!mongo_db.conexionOk) { //no conectar dos veces
-                await mongoose.connect(config.STR_CNX, {
+                await mongoose.connect( process.env.CNX , {
                     useNewUrlParser: true,
                     useUnifiedTopology: true
                 })
