@@ -2,7 +2,7 @@ import express from 'express'
 import cors from "cors"
 import compression from "compression"
 import config from "./config.js"
-import mongo_db from "./model/db_mongo.js"
+import mongo_db from "./db_mongo.js"
 //import routerItem from "./router/api/item.js"
 import mercadopago from "mercadopago"
 import { fileURLToPath } from 'url';
