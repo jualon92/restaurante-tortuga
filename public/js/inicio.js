@@ -43,11 +43,16 @@ async function initInicio() {
     componentHandler.upgradeDom()
 
 
+     
 
+
+    //
     document.querySelector("#btn-update").addEventListener('click', async () => {
         await instalarSW()
 
     });
+
+
 
     let listaPrueba = []
     storagePreferido.setItem("listaCarro", JSON.stringify(listaPrueba))
@@ -61,27 +66,27 @@ async function initInicio() {
         console.log("nuevo hash" + location.hash)
     })
 
-    async function guardarImagen(){
+    async function guardarImagen() {
         if (storagePreferido.getItem("user") === null) { //si usuario no existe en local storage
             console.warn("nuevo usuario")
             await $.ajax({
                 url: 'https://randomuser.me/api/',
                 dataType: 'json',
                 success: function (data) {
-                    
+
                     let imgUser = data.results[0].picture.thumbnail
                     let user = data.results[0]
                     console.warn(user)
                     storagePreferido.setItem("user", JSON.stringify(user)) //clase? getItem usuario imagen  en vez de JSON.parse(getItem).imagen
                     storagePreferido.setItem("usuario-imagen", `url(${imgUser})`)
-                    
+
                 }
             })
-        }  
+        }
     }
 
-     
-     guardarImagen()  //
+
+    guardarImagen()  //
 }
 
 
