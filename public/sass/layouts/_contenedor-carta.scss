@@ -28,7 +28,7 @@
     &__titulo {
  
         width: 323px;
-        height: 87px;
+      //  height: 87px;
  
         font-family: Roboto;
         font-style: normal;
@@ -229,4 +229,14 @@
     background: #ff0000;
     border: 1px solid #ff0000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+@media (max-width:400px) {
+    .contenedor__cartas{
+        gap: 0.5rem;
+       
+        padding-bottom: 60px;
+        max-height: -webkit-fill-available;
+    } 
 }
