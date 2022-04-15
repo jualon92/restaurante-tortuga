@@ -13,7 +13,8 @@
           align-items: center;
   gap: 0.925rem;
   overflow: hidden;
-  min-height: calc(100vh - 40px);
+  padding-bottom: 60px;
+  max-height: -webkit-fill-available;
 }
 
 .foto__burger {
