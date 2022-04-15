@@ -53,9 +53,14 @@ async function initInicio() {
     });
 
 
-
+    // nueva instancia de client storage
     let listaPrueba = []
     storagePreferido.setItem("listaCarro", JSON.stringify(listaPrueba))
+    storagePreferido.setItem("contadorCompras", JSON.stringify(0))
+
+
+
+
     console.warn("initInicio")
     document.querySelector(".btnP").addEventListener('click', e => {
         console.log("clickeado")
@@ -66,6 +71,7 @@ async function initInicio() {
         console.log("nuevo hash" + location.hash)
     })
 
+    
     async function guardarImagen() {
         if (storagePreferido.getItem("user") === null) { //si usuario no existe en local storage
             console.warn("nuevo usuario")
