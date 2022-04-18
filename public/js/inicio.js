@@ -25,7 +25,7 @@ let imagenPerfil = null
 let deferredPrompt;
 let imagenUsada = ""
 let faltaInstalar = false;
-
+let  positionDisplay 
 /*
 window.addEventListener('beforeinstallprompt', (event) => {
     // Prevent the mini-infobar from appearing on mobile.
@@ -40,10 +40,43 @@ window.addEventListener('beforeinstallprompt', (event) => {
 */
 
 async function initInicio() {
-    componentHandler.upgradeDom()
-
-
+    let direccion
      
+    componentHandler.upgradeDom()
+ 
+      
+    function geoLoc() { 
+        
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(reverseGeoLoc); 
+            
+        } else {
+            locacion = "Geolocation is not supported by this browser.";
+        }
+
+        async function reverseGeoLoc(pos){
+            direccion =  await 
+            fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&localityLanguage=en
+            `).then(r => r.json())
+            console.log(direccion)
+            getInfo(direccion)
+        }
+
+        async function getInfo(direccion){
+            let nombrePais = direccion.countryCode
+            let nombreCiudad = direccion.locality.split(" ")[0] // campana partido => campana 
+             positionDisplay = {"pais" : nombrePais, "ciudad" : nombreCiudad}
+
+            console.log(positionDisplay)
+        }
+
+       
+    }
+
+    
+
+
+    
     storagePreferido.setItem("listaActiva", JSON.stringify(burgerList))
 
     //
@@ -71,7 +104,7 @@ async function initInicio() {
         console.log("nuevo hash" + location.hash)
     })
 
-    
+
     async function guardarImagen() {
         if (storagePreferido.getItem("user") === null) { //si usuario no existe en local storage
             console.warn("nuevo usuario")
@@ -91,8 +124,10 @@ async function initInicio() {
         }
     }
 
-
+    geoLoc()
+ 
     guardarImagen()  //
+     
 }
 
 

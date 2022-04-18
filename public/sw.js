@@ -1,4 +1,4 @@
-const NVERSION = 72
+const NVERSION = 91
 
 
 const CACHE_STATIC_NAME = `static-v${NVERSION}`

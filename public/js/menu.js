@@ -58,14 +58,22 @@ async function initMenu() {
           return html 
       }*/
 
+      
+    //direccion 
+  //  let plantillaDireccion =  await fetch('templates/locacion.hbs').then(r => r.text())
+  //  var template = Handlebars.compile(plantillaDireccion);
+  //  let direccionHTML = template({position : arrPositionDisplay })  
+    document.querySelector(".menu-header__direccion-texto").innerHTML = `<span>${positionDisplay.ciudad}, ${positionDisplay.pais}</span>`
 
+
+    //cartelera
     let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
     var template = Handlebars.compile(plantillaHbs);
     let listaActual = JSON.parse(storagePreferido.getItem("listaActiva"))
     console.log("cartelera en puntero", listaActual)
     let html = template({ item: listaActual })
     productoContainer.innerHTML = html
-
+    
     
     
     //  document.querySelector(".contenedor-productos__btn-ordenar").style = window.sessionStorage.getItem("directionChoice")
@@ -82,7 +90,7 @@ async function initMenu() {
 
             let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
             var template = Handlebars.compile(plantillaHbs);
-            let html = template({ item: listaProductosAMostrar })
+            let html = template({ item: listaProductosAMostrar})
             productoContainer.innerHTML = html
 
             //sets lista a tomar files de cartas
