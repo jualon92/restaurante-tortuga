@@ -13,13 +13,13 @@ let burgerList = [
         estrellas: 4.5,
         calorias: "180kcal",
         tiempo: "5-15min",
-        imagenCartelera: "images/ambur.avif"
+        imagenCartelera: "images/ambur.webp"
     }
     ,
     {
         nombre: "Burger Dancing Chicken",
         descripcion: "Pollo bailarin",
-        imagen: "/images/hamGrande.avif",
+        imagen: "/images/hamGrande.webp",
         precio: `11.25`,
         texto: `Un pollo alegre es un sabor diferente`,
         estrellas: 4.2,
@@ -47,23 +47,23 @@ let pizzaList = [
     {
         nombre: "Fire Pizza",
         descripcion: "Pizza Extra picante",
-        imagen: "/images/pizza-grande15.avif",
+        imagen: "/images/pizza-grande15.webp",
         precio: "6.11",
         texto:"No apta para paladares sensibles",
         estrellas:"1",
         calorias:"1kcal",
         tiempo:"12min",
-        imagenCartelera: "/images/pizza10.avif"
+        imagenCartelera: "/images/pizza10.webp"
     },{
         nombre: "Pizza Salamin",
         descripcion: "Pizza Pizza",
-        imagen:  "/images/pizza-salaminGrande.avif",
+        imagen:  "/images/pizza-salaminGrande.webp",
         precio: "16.11",
         texto:"Salamandra",
         estrellas:"5",
         calorias:"1.4kcal",
         tiempo:"15min",
-        imagenCartelera: "/images/pizza15.avif"
+        imagenCartelera: "/images/pizza15.webp"
     } 
 ]
 
@@ -72,13 +72,13 @@ let panchoList = [
     {
         nombre: "Mega Pancho XL",
         descripcion: "Pancho con serving",
-        imagen: "/images/standardPancho-big.avif",
+        imagen: "/images/standardPancho-big.webp",
         precio: "20.11",
         texto:"Un par de servilletas para evitar problemas con el medio pote de mayonesa casera que orgullosamente ostenta",
         estrellas:"5",
         calorias:"10.5kcal",
         tiempo:"10min",
-        imagenCartelera: "/images/standardPancho-small.avif"
+        imagenCartelera: "/images/standardPancho-small.webp"
     } 
 ]
      

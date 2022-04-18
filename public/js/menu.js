@@ -13,7 +13,7 @@ async function initMenu() {
     console.warn(document.querySelector(".menu-header__foto"))
     document.querySelector(".menu-header__foto").style.backgroundImage = localStorage.getItem("usuario-imagen")
     
-    storagePreferido.setItem("listaActiva", JSON.stringify(burgerList))
+   // storagePreferido.setItem("listaActiva", JSON.stringify(burgerList))
     let productoContainer = document.querySelector(".productos")
     let listaProductos = Array.from(document.querySelectorAll(".productos__item"))
     console.warn("initMenu")

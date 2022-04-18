@@ -1,4 +1,4 @@
-const NVERSION = 65
+const NVERSION = 71
 
 
 const CACHE_STATIC_NAME = `static-v${NVERSION}`
@@ -23,14 +23,14 @@ const appShellFiles = [
     "/images/zanella.svg",
 
     "/images/ham3.png",
-    "/images/ambur.avif",
+    "/images/ambur.webp",
     "/images/towerburger.png",
-    "/images/pizza10.avif",
-    "/images/pizza15.avif",
-    "/images/hamGrande.avif",
+    "/images/pizza10.webp",
+    "/images/pizza15.webp",
+    "/images/hamGrande.webp",
     "/images/burgerGigante.png",
-    "/images/pizza-grande15.avif",
-    "/images/pizza-salaminGrande.avif",
+    "/images/pizza-grande15.webp",
+    "/images/pizza-salaminGrande.webp",
 
 
 
@@ -46,8 +46,8 @@ const appShellFiles = [
 
     "/images/corazon.svg",
     "/images/menuGrande.avif",
-    "/images/standardPancho-big.avif",
-    "/images/standardPancho-small.avif",
+    "/images/standardPancho-big.webp",
+    "/images/standardPancho-small.webp",
     "/images/simbolo4.png",
     "/images/simbolo5.png",
     "/images/reloj.svg",

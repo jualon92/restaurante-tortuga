@@ -44,7 +44,7 @@ async function initInicio() {
 
 
      
-
+    storagePreferido.setItem("listaActiva", JSON.stringify(burgerList))
 
     //
     document.querySelector("#btn-update").addEventListener('click', async () => {
