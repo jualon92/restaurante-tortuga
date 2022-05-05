@@ -1,43 +1,28 @@
 # restaurante-tortuga
 
+## Single Page Application de pedidos de comida, PWA 
+
+### Se utilizo
+- Mobile First Approach (prototipado en figma)
+- Api de MercadoPago, +  consultar que tan fiables son los datos a mongoDB (Express, mongoose, mp checkoutpro).  
+- Heroku Cli (git)
+- Geolocation (html geolocation devuelve lat y long  =>  reverse geolocation direccion)
+- SPA ( handlebars, ajax, async/await, fetch)
+- PWA (Service worker permite estrategias de cacheo app shell, estatico y dinamico, instalacion como app y func offline)
+- SessionStorage (contador compras, items carritos, datos usuario, categoria elegida de items a mostrar al volver a menu)
+- random api para mock de datos usuario
 
 
-# Problemas a solucionar
- Se busca app web  que sirva para hacer pedidos de comida por celular.
- 
- 
- 
- -  Que utilice mercadopago. Sample de api de  mercadopago https://github.com/mercadopago/checkout-payment-sample 
- 
- Problemas: el precio es tomado mediante innerHTML. Con cambiar el html puede hacerse un pedido de por ej : un guiso de gran magnitud por 5 pesos.
 
-Approach: se guardan pares nombre-precio en mongoDB.  Se verifica que exista un par nombre-precio en mongoDB que coincida con el nombre y precio del preducto en carrito local(req.body) para continuar con compra
+##
  
- - Cargar rapido:
- Se utiliza preload en primera carga. Ademas se utiliza service worker para que mediante fetch carge los archivos principales en el cache.  Esto ademas posibilita funcionamiento offline.
- Las imagenes se pasaron a formato avif. Si html detecta iphone se utiliza webp  
- 
- 
- -  Capacidad de instalar:
-Service worker mediante manifest.json() permite instalacion. Si detecta que no esta instalado, app muestra displays para instalar. Si ya esta instalado, no aparecen. Esto se logra mediante listener before event install
-
- - Permanencia:
-Se opto por localStorage. Para poder testear o reiniciar el storage ya que no expira se da la opcion de borrar datos de navegacion
-
-- API : se pide data de usuario random  mediante  jquery ajax a https://randomapi.com/  . Esto es para simular un usuario
+- BEM, SASS (7 in 1, mixins/herencia)
+- google mdl para  mas app-like (botones, dropdown)
+- Imagenes en webp para reducir carga (sqoosh)
 
 
-# Conceptos aplicados
-- Single Page Application, vanilla JS  
-- NodeJS, express, MVC, api mercadopago, consultar que tan fiables son los datos a base de datos, Heroku CLI.
-- prototipado Figma / Mobile first approach /  BEM, SASS, 7 in 1, mixins/herencia
-- handlebars para template de cartas de alimentos 
-- Material Design Lite para  algunos iconos/botones, y dropdown
-- PWA, service worker para fetch e instalar aplicacion. 
-- random api https://randomapi.com/  como mock api,  sesion storage para permanencia
-
  
-### Metas
-- que opcion Mi perfil utilice atributo nombre, direccion, etc, para hacer un resumen del usuario y permitir cambios.
-- agregar checkout pro de mercadopago, que tome direccion del objeto persona obtenido de la api para utilizarlo en resumen antes de la compra
- 
+![image](https://user-images.githubusercontent.com/46230600/163786035-e9ec9ecf-d1e3-4470-b140-a7199368bf0f.png)
+![image](https://user-images.githubusercontent.com/46230600/163786320-e1a2267d-35dc-4c70-8807-625c0aeccf28.png)
+![image](https://user-images.githubusercontent.com/46230600/163786461-d6018c66-bd7a-48ec-8911-a5c8db072d43.png)
+![mp](https://user-images.githubusercontent.com/46230600/163786982-92c0d607-b170-435b-ad56-96a42ed6acba.png)
