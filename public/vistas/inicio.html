@@ -7,9 +7,12 @@
   </button>
 
     <div class="carta__contenedor-imagen">
-        <img class="carta__imagen" src="/images/menuGrande.webp" onerror="this.src='/images/pantallainicial.webp'" />
+        <picture>  
+        <source  class="carta__imagen" srcset="/images/inicioLaptop.webp" media="screen and (min-width: 940px)"  type="image/webp"   >
+        <img class="carta__imagen" src='/images/pantallainicial.webp'  type="image/webp" />
+    </picture>
 
-    </div>
+    </div>  
     <div class="carta__titulo">
         <div> La forma mas rapida de obtener <span style="color:#ff2e00d4">Comida</span> </div>
     </div>

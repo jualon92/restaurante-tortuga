@@ -17,12 +17,6 @@
   max-height: -webkit-fill-available;
 }
 
-@media screen and (min-width: 1000px) {
-  .contenedor-carta {
-    gap: 3.5rem;
-  }
-}
-
 .foto__burger {
   position: absolute;
   right: 85%;
@@ -67,7 +61,7 @@
 
 @media screen and (min-width: 900px) {
   .carta__imagen {
-    width: unset;
+    width: unset !important;
   }
 }
 
@@ -105,12 +99,6 @@
           align-items: center;
   text-align: center;
   color: #000000;
-}
-
-@media screen and (min-width: 900px) {
-  .carta__descripcion {
-    width: 400px !important;
-  }
 }
 
 .rectangulos {
@@ -189,18 +177,17 @@
   }
 }
 
-@media screen and (min-width: 900px) {
-  .btn-comenzar {
-    height: 65px;
-  }
-}
-
 .btn-comenzar:hover, .btn-comenzar:active {
   background-color: #ad0d0d;
   color: wheat;
 }
 
 .btn-comenzar__texto {
+  position: static;
+  width: 124px;
+  height: 23px;
+  left: 102px;
+  top: 17.5px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -875,12 +862,6 @@ body {
     left: 2%;
     right: 2%;
     bottom: 2%;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .carta-container__fondo {
-    margin-bottom: 4%;
   }
 }
 

@@ -1,4 +1,4 @@
-const NVERSION = 91
+const NVERSION = 93
 
 
 const CACHE_STATIC_NAME = `static-v${NVERSION}`
@@ -7,9 +7,12 @@ const CACHE_INMUTABLE_NAME = `inmutable-${NVERSION}`
 
 const CACHE_DYNAMIC_NAME = `dynamic-v${NVERSION}`
 
-const CON_CACHE = true
+const CON_CACHE = false
+
+let swActivado = false 
 
 
+if (swActivado){  
 const appShellFiles = [
     //Imagenes
     '/images/c1.jpg',
@@ -175,3 +178,5 @@ self.addEventListener('fetch', e => {
         }
     }
 })
+
+}
