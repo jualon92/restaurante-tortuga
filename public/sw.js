@@ -9,10 +9,9 @@ const CACHE_DYNAMIC_NAME = `dynamic-v${NVERSION}`
 
 const CON_CACHE = false
 
-let swActivado = true //para testing
+ 
 
-
-if (swActivado){  
+ 
 const appShellFiles = [
     //Imagenes
     '/images/c1.jpg',
@@ -179,4 +178,4 @@ self.addEventListener('fetch', e => {
     }
 })
 
-}
+ 
