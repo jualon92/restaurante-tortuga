@@ -7,7 +7,7 @@ const CACHE_INMUTABLE_NAME = `inmutable-${NVERSION}`
 
 const CACHE_DYNAMIC_NAME = `dynamic-v${NVERSION}`
 
-const CON_CACHE = false
+const CON_CACHE = true
 
  
 
