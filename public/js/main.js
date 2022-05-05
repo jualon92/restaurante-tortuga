@@ -132,6 +132,6 @@ function registrarServiceWorker() {
     }
 } 
 
-//registrarServiceWorker()
+registrarServiceWorker()
 const main = new Main()
 main.start() //ini

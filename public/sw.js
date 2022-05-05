@@ -9,7 +9,7 @@ const CACHE_DYNAMIC_NAME = `dynamic-v${NVERSION}`
 
 const CON_CACHE = false
 
-let swActivado = false 
+let swActivado = true //para testing
 
 
 if (swActivado){  
