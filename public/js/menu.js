@@ -64,10 +64,11 @@ async function initMenu() {
   //  var template = Handlebars.compile(plantillaDireccion);
   //  let direccionHTML = template({position : arrPositionDisplay })  
    
-   if(positionDisplay.ciudad){
+      /*
+   if(positionDisplay){
     document.querySelector(".menu-header__direccion-texto").innerHTML = `<span>${positionDisplay.ciudad}, ${positionDisplay.pais}</span>`
     
-   }
+   }*/
    
 
     //cartelera
