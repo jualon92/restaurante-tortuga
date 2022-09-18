@@ -63,8 +63,12 @@ async function initMenu() {
   //  let plantillaDireccion =  await fetch('templates/locacion.hbs').then(r => r.text())
   //  var template = Handlebars.compile(plantillaDireccion);
   //  let direccionHTML = template({position : arrPositionDisplay })  
+   
+   if(positionDisplay.ciudad){
     document.querySelector(".menu-header__direccion-texto").innerHTML = `<span>${positionDisplay.ciudad}, ${positionDisplay.pais}</span>`
-
+    
+   }
+   
 
     //cartelera
     let plantillaHbs = await fetch('templates/cartelera.hbs').then(r => r.text())
